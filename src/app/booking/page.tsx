@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Link from "next/link";
 import Logo from "@/components/Logo";
 import BookingWizard from "@/components/BookingWizard";
@@ -25,7 +26,9 @@ export default function BookingPage() {
                         <h1 className="text-3xl md:text-4xl font-bold text-blue-950 font-serif mb-2">Schedule Pickup</h1>
                         <p className="text-slate-500">We'll collect your clothes at your convenience.</p>
                     </div>
-                    <BookingWizard />
+                    <Suspense fallback={<div className="w-full h-96 bg-white rounded-3xl shadow-xl flex items-center justify-center text-slate-400">Loading Wizard...</div>}>
+                        <BookingWizard />
+                    </Suspense>
                 </div>
             </div>
 

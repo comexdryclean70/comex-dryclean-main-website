@@ -138,13 +138,14 @@ function BookingFormWithParams() {
                                 : "top-4 text-base text-slate-500 font-medium"
                                 }`}
                         >
-                            Order Details / Notes
+                            Order Details (e.g., 2 Suits, 1 Saree)
                         </label>
                         <textarea
                             name="notes"
                             rows={3}
+                            placeholder="Note: We specialize in Dry Cleaning & Steam Press only. We do not accept regular kilo-laundry."
                             className={`${inputClasses} resize-none ${focusedField === 'notes' || formData.notes ? "pt-7 pb-3" : "pt-4 pb-4"
-                                } ${focusedField === 'notes' ? focusClasses : ''}`}
+                                } ${focusedField === 'notes' ? focusClasses : ''} placeholder:text-slate-300 placeholder:text-sm pt-8`}
                             onChange={handleChange}
                             onFocus={() => setFocusedField('notes')}
                             onBlur={() => setFocusedField(null)}

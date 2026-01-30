@@ -38,8 +38,12 @@ export default function PriceCards() {
     const [activeTab, setActiveTab] = useState("Men's Formal");
 
     return (
-        <section className="py-20 px-6 relative overflow-hidden bg-white">
-            <div className="max-w-4xl mx-auto">
+        <section className="py-20 px-6 relative overflow-hidden bg-slate-50">
+            {/* Dot Pattern Overlay */}
+            <div className="absolute inset-0 z-0 opacity-[0.4]" style={{ backgroundImage: "radial-gradient(#cbd5e1 1px, transparent 1px)", backgroundSize: "32px 32px" }}></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-transparent to-white/80 z-0"></div>
+
+            <div className="max-w-4xl mx-auto relative z-10">
                 <div className="text-center mb-10">
                     <h2 className="text-3xl font-bold text-blue-950 font-serif mb-4">Transparent Pricing</h2>
                     <p className="text-slate-500 mb-6">Premium Care. Honest Rates.</p>
@@ -51,9 +55,9 @@ export default function PriceCards() {
                                 key={cat}
                                 onClick={() => setActiveTab(cat)}
                                 className={cn(
-                                    "px-5 py-2.5 rounded-xl text-sm font-bold transition-all duration-300",
+                                    "px-6 py-3 rounded-xl text-base font-bold transition-all duration-300 min-w-[120px]",
                                     activeTab === cat
-                                        ? "bg-blue-950 text-white shadow-md shadow-blue-900/10"
+                                        ? "bg-blue-950 text-white shadow-lg shadow-blue-900/20 scale-105"
                                         : "text-slate-500 hover:text-slate-800 hover:bg-white"
                                 )}
                             >

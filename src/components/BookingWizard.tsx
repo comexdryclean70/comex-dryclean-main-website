@@ -184,20 +184,25 @@ export default function BookingWizard() {
     };
 
     return (
-        <section id="booking" className="py-20 px-4 bg-slate-50 relative">
-            <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent"></div>
+        <section id="booking" className="py-20 px-4 bg-gradient-to-br from-blue-50 to-blue-100 relative">
+            <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-white to-transparent opacity-50"></div>
 
             <div className="max-w-2xl mx-auto">
                 <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100">
 
-                    {/* Progress Bar */}
-                    <div className="relative h-1.5 bg-slate-100 w-full">
+                    <div className="relative h-1.5 bg-slate-100 w-full mb-2">
                         <motion.div
                             className="absolute left-0 top-0 bottom-0 bg-blue-600"
                             initial={{ width: "33%" }}
                             animate={{ width: `${(step / 3) * 100}%` }}
                             transition={{ duration: 0.5 }}
                         />
+                    </div>
+                    {/* Step Labels */}
+                    <div className="grid grid-cols-3 text-center text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-6 px-2">
+                        <span className={step >= 1 ? "text-blue-600" : ""}>Time</span>
+                        <span className={step >= 2 ? "text-blue-600" : ""}>Details</span>
+                        <span className={step >= 3 ? "text-blue-600" : ""}>Confirm</span>
                     </div>
 
                     <div className="p-8 md:p-10">
@@ -239,7 +244,7 @@ export default function BookingWizard() {
                                             <h3 className="font-bold text-slate-700 flex items-center gap-2 text-sm uppercase tracking-wide">
                                                 <Calendar className="w-4 h-4 text-orange-500" /> Select Date
                                             </h3>
-                                            <div className="flex gap-3 overflow-x-auto pb-4 scrollbar-hide -mx-2 px-2">
+                                            <div className="grid grid-cols-3 md:grid-cols-4 gap-3">
                                                 {days.map((d, i) => {
                                                     const isSelected = formData.date === d.toDateString();
                                                     const label = i === 0 ? "Today" : i === 1 ? "Tmrw" : d.toLocaleDateString('en-US', { weekday: 'short' });
@@ -249,13 +254,13 @@ export default function BookingWizard() {
                                                         <button
                                                             key={i}
                                                             onClick={() => setFormData({ ...formData, date: d.toDateString() })}
-                                                            className={`shrink-0 min-w-[80px] p-3 rounded-2xl border transition-all duration-200 flex flex-col items-center gap-1 ${isSelected
-                                                                ? 'bg-blue-600 border-blue-600 text-white shadow-lg shadow-blue-200 scale-105'
+                                                            className={`w-full p-4 rounded-2xl border transition-all duration-200 flex flex-col items-center gap-1 ${isSelected
+                                                                ? 'bg-blue-600 border-blue-600 text-white shadow-lg shadow-blue-200 ring-2 ring-blue-200 ring-offset-2'
                                                                 : 'bg-white border-slate-200 text-slate-600 hover:border-blue-300 hover:bg-blue-50'
                                                                 }`}
                                                         >
-                                                            <span className="text-xs font-bold opacity-80">{label}</span>
-                                                            <span className={`text-sm font-bold ${isSelected ? 'text-white' : 'text-blue-900'}`}>{subLabel}</span>
+                                                            <span className="text-xs font-bold opacity-80 uppercase tracking-widest">{label}</span>
+                                                            <span className={`text-lg font-bold ${isSelected ? 'text-white' : 'text-blue-900'}`}>{subLabel}</span>
                                                         </button>
                                                     )
                                                 })}

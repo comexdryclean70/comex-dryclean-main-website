@@ -7,6 +7,14 @@ import { useSearchParams } from "next/navigation";
 import { PRICING_DATA } from "@/lib/pricingData";
 
 // --- Types ---
+type CartItem = {
+    id: string;
+    name: string;
+    price: number;
+    qty: number;
+    category: string;
+};
+
 type FormData = {
     date: string;
     time: string;
@@ -81,6 +89,45 @@ export default function BookingWizard() {
         address: "",
         items: "",
     });
+
+    // --- Cart State ---
+    const [cart, setCart] = useState<CartItem[]>([]);
+    const [selectedCategory, setSelectedCategory] = useState<keyof typeof PRICING_DATA>("Men");
+    const [selectedItemId, setSelectedItemId] = useState(PRICING_DATA["Men"][0].id);
+    const [currentQty, setCurrentQty] = useState(1);
+    const [notes, setNotes] = useState("");
+
+    const handleAddItem = () => {
+        const categoryItems = PRICING_DATA[selectedCategory];
+        const item = categoryItems.find(i => i.id === selectedItemId);
+        if (!item) return;
+
+        setCart(prev => {
+            const existing = prev.find(i => i.id === item.id);
+            if (existing) {
+                return prev.map(i => i.id === item.id ? { ...i, qty: i.qty + currentQty } : i);
+            }
+            return [...prev, { id: item.id, name: item.name, price: item.minPrice, qty: currentQty, category: selectedCategory }];
+        });
+        setCurrentQty(1);
+    };
+
+    const handleRemoveItem = (id: string) => {
+        setCart(prev => prev.filter(i => i.id !== id));
+    };
+
+    const totalEstimate = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
+
+    // Sync Cart to FormData Items String
+    useEffect(() => {
+        if (cart.length === 0 && !notes) {
+            setFormData(prev => ({ ...prev, items: "" }));
+            return;
+        }
+        const cartText = cart.map(i => `${i.name} (x${i.qty})`).join(", ");
+        const finalNote = notes ? `\nNotes: ${notes}` : "";
+        setFormData(prev => ({ ...prev, items: cartText + finalNote }));
+    }, [cart, notes]);
 
     const days = useMemo(() => getNext7Days(), []);
 
@@ -304,15 +351,91 @@ export default function BookingWizard() {
                                             </div>
                                         </div>
 
+                                        {/* Item Calculator */}
+                                        <div className="bg-white border rounded-2xl p-4 shadow-sm space-y-4">
+                                            <div className="flex flex-col sm:flex-row gap-3">
+                                                <select
+                                                    className="p-3 border rounded-xl bg-slate-50 font-medium text-slate-700 outline-none focus:ring-2 focus:ring-blue-100"
+                                                    value={selectedCategory}
+                                                    onChange={(e) => {
+                                                        setSelectedCategory(e.target.value as any);
+                                                        setSelectedItemId(PRICING_DATA[e.target.value as keyof typeof PRICING_DATA][0].id);
+                                                    }}
+                                                >
+                                                    {Object.keys(PRICING_DATA).map(cat => (
+                                                        <option key={cat} value={cat}>{cat}</option>
+                                                    ))}
+                                                </select>
+
+                                                <select
+                                                    className="flex-1 p-3 border rounded-xl bg-slate-50 font-medium text-slate-700 outline-none focus:ring-2 focus:ring-blue-100"
+                                                    value={selectedItemId}
+                                                    onChange={(e) => setSelectedItemId(e.target.value)}
+                                                >
+                                                    {PRICING_DATA[selectedCategory].map(item => (
+                                                        <option key={item.id} value={item.id}>{item.name} - ₹{item.minPrice}+</option>
+                                                    ))}
+                                                </select>
+
+                                                <div className="flex items-center gap-2 bg-slate-50 border rounded-xl px-2">
+                                                    <button onClick={() => setCurrentQty(Math.max(1, currentQty - 1))} className="p-1 hover:text-blue-600"><Minus className="w-4 h-4" /></button>
+                                                    <span className="w-8 text-center font-bold text-slate-700">{currentQty}</span>
+                                                    <button onClick={() => setCurrentQty(currentQty + 1)} className="p-1 hover:text-blue-600"><Plus className="w-4 h-4" /></button>
+                                                </div>
+
+                                                <button
+                                                    onClick={handleAddItem}
+                                                    className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-xl font-bold transition-colors shadow-sm"
+                                                >
+                                                    Add
+                                                </button>
+                                            </div>
+
+                                            {/* Cart List */}
+                                            {cart.length > 0 ? (
+                                                <div className="border-t pt-4 space-y-2">
+                                                    {cart.map((item) => (
+                                                        <div key={item.id} className="flex justify-between items-center text-sm p-2 hover:bg-slate-50 rounded-lg group">
+                                                            <div className="font-medium text-slate-700">
+                                                                {item.name} <span className="text-slate-400 text-xs ml-1">x{item.qty}</span>
+                                                            </div>
+                                                            <div className="flex items-center gap-4">
+                                                                <span className="font-bold text-slate-900">₹{item.price * item.qty}</span>
+                                                                <button onClick={() => handleRemoveItem(item.id)} className="text-slate-300 group-hover:text-red-500 transition-colors">
+                                                                    <Trash2 className="w-4 h-4" />
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    ))}
+
+                                                    <div className="border-t border-dashed pt-3 mt-3 flex justify-between items-end">
+                                                        <div>
+                                                            <div className="text-xs text-slate-500 font-medium">Base Estimate</div>
+                                                            <div className="text-2xl font-bold text-blue-950">₹{totalEstimate}*</div>
+                                                        </div>
+                                                        <div className="text-right max-w-[200px]">
+                                                            <p className="text-[10px] text-slate-400 leading-tight">
+                                                                *Final price varies based on fabric type (Silk/Zari) & work. Confirmed at pickup.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            ) : (
+                                                <div className="text-center py-6 text-slate-400 text-sm">
+                                                    Select items above to estimate cost.
+                                                </div>
+                                            )}
+                                        </div>
+
                                         <div className="space-y-2">
                                             <label className="text-sm font-bold text-slate-700 uppercase tracking-wide flex items-center gap-2">
-                                                <Shirt className="w-4 h-4 text-orange-500" /> Items for Pickup
+                                                Additional Notes (Optional)
                                             </label>
                                             <textarea
-                                                className="w-full h-32 p-4 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none resize-none text-slate-700 placeholder:text-slate-400"
-                                                placeholder="e.g., 2 Suits, 1 Lehenga, 3 Silk Sarees..."
-                                                value={formData.items}
-                                                onChange={(e) => setFormData({ ...formData, items: e.target.value })}
+                                                className="w-full h-20 p-4 rounded-xl border border-slate-200 focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none resize-none text-slate-700 placeholder:text-slate-400 text-sm"
+                                                placeholder="e.g., The white shirt has a coffee stain..."
+                                                value={notes}
+                                                onChange={(e) => setNotes(e.target.value)}
                                             />
                                         </div>
                                     </motion.div>

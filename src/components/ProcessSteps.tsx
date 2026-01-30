@@ -8,28 +8,28 @@ export default function ProcessSteps() {
             title: "Book a Slot",
             desc: "Schedule online or call us.",
             icon: CalendarCheck,
-            image: "https://placehold.co/400x300/e2e8f0/1e293b?text=Book+Slot"
+            image: "/step-book.png"
         },
         {
             id: 2,
             title: "We Pickup",
             desc: "From your doorstep.",
             icon: Truck,
-            image: "https://placehold.co/400x300/fed7aa/9a3412?text=Pickup"
+            image: "/step-pickup.png"
         },
         {
             id: 3,
             title: "Expert Cleaning",
             desc: "Eco-friendly processing.",
             icon: Waves,
-            image: "https://placehold.co/400x300/bfdbfe/1e3a8a?text=Cleaning"
+            image: "/step-cleaning.png"
         },
         {
             id: 4,
             title: "Fast Delivery",
             desc: "Fresh, folded & ironed.",
             icon: Shirt,
-            image: "https://placehold.co/400x300/bbf7d0/166534?text=Delivery"
+            image: "/step-delivery.png"
         },
     ];
 

@@ -188,7 +188,7 @@ export default function BookingWizard() {
             <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent"></div>
 
             <div className="max-w-2xl mx-auto">
-                <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100">
+                <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border border-slate-100">
 
                     {/* Progress Bar */}
                     <div className="relative h-1.5 bg-slate-100 w-full">

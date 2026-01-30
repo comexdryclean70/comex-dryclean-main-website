@@ -17,7 +17,7 @@ export default function Home() {
             src="/comex-logo.png"
             alt="Comex Drycleaners"
             fill
-            className="object-contain object-left"
+            className="object-contain object-left mix-blend-multiply"
             priority
           />
         </div>

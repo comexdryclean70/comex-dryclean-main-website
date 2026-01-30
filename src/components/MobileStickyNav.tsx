@@ -15,15 +15,15 @@ export default function MobileStickyNav() {
 
                 {/* Slot Indicator */}
                 <div className="flex justify-center mb-3">
-                    <div className="inline-flex items-center gap-1.5 bg-green-50 text-green-700 px-3 py-1 rounded-full text-xs font-bold">
-                        <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                    <div className="inline-flex items-center gap-1.5 bg-blue-50 text-blue-700 px-3 py-1 rounded-full text-xs font-bold">
+                        <div className="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
                         Next Slot: Today, 2 PM
                     </div>
                 </div>
 
                 <button
                     onClick={() => setIsOpen(true)}
-                    className="w-full bg-[#00cba9] text-white font-bold py-4 rounded-2xl shadow-lg shadow-[#00cba9]/30 active:scale-[0.98] transition-transform flex items-center justify-center gap-2"
+                    className="w-full bg-[#0890f1] text-white font-bold py-4 rounded-2xl shadow-lg shadow-blue-500/30 active:scale-[0.98] transition-transform flex items-center justify-center gap-2"
                 >
                     <Calendar className="w-5 h-5" /> Schedule Pickup
                 </button>
@@ -68,7 +68,7 @@ export default function MobileStickyNav() {
                                     <div className="font-bold text-slate-800">Dry Clean</div>
                                     <div className="text-xs text-slate-500">Suits, Dresses</div>
                                 </Link>
-                                <Link href="/booking?items=laundry" className="bg-green-50 hover:bg-green-100 p-4 rounded-2xl border border-green-100 text-center transition-colors group">
+                                <Link href="/booking?items=laundry" className="bg-cyan-50 hover:bg-cyan-100 p-4 rounded-2xl border border-cyan-100 text-center transition-colors group">
                                     <div className="text-3xl mb-2 group-hover:scale-110 transition-transform">🧺</div>
                                     <div className="font-bold text-slate-800">Laundry</div>
                                     <div className="text-xs text-slate-500">Wash & Fold</div>
@@ -87,7 +87,7 @@ export default function MobileStickyNav() {
 
                             <Link
                                 href="/booking"
-                                className="w-full bg-slate-900 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2"
+                                className="w-full bg-[#0890f1] text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-blue-500/20"
                             >
                                 Continue to Booking <ChevronRight className="w-5 h-5" />
                             </Link>

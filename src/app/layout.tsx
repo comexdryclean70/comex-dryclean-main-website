@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, Lobster } from "next/font/google"; // [NEW] Import Playfair
+import { Inter, Playfair_Display, Lobster, Caveat } from "next/font/google"; // [NEW] Import Playfair
 import "./globals.css";
 
 const inter = Inter({
@@ -16,6 +16,11 @@ const lobster = Lobster({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-lobster",
+});
+
+const caveat = Caveat({
+  subsets: ["latin"],
+  variable: "--font-caveat",
 });
 
 export const metadata: Metadata = {

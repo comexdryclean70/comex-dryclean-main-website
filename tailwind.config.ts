@@ -17,6 +17,7 @@ const config: Config = {
                 sans: ["var(--font-inter)"],
                 serif: ["var(--font-playfair)"],
                 lobster: ["var(--font-lobster)"],
+                handwriting: ["var(--font-caveat)"],
             },
         },
     },

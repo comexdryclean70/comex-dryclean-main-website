@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, Great_Vibes } from "next/font/google"; // [NEW] Import Playfair
+import { Inter, Playfair_Display, Lobster } from "next/font/google"; // [NEW] Import Playfair
 import "./globals.css";
 
 const inter = Inter({
@@ -12,10 +12,10 @@ const playfair = Playfair_Display({
   variable: "--font-playfair",
 });
 
-const greatVibes = Great_Vibes({
+const lobster = Lobster({
   weight: "400",
   subsets: ["latin"],
-  variable: "--font-great-vibes",
+  variable: "--font-lobster",
 });
 
 export const metadata: Metadata = {
@@ -66,7 +66,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} ${playfair.variable} ${greatVibes.variable} font-sans bg-slate-50 text-slate-900 antialiased`}>
+      <body className={`${inter.variable} ${playfair.variable} ${lobster.variable} font-sans bg-slate-50 text-slate-900 antialiased`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

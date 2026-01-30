@@ -10,7 +10,7 @@ export default function Logo({ variant = "dark", className }: LogoProps) {
 
     return (
         <div className={cn("flex flex-col leading-none select-none", className)}>
-            <span className="font-great-vibes text-[#D32F2F] text-4xl md:text-5xl">
+            <span className="font-lobster text-[#D32F2F] text-4xl md:text-5xl">
                 Comex
             </span>
             <span className={cn(

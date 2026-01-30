@@ -2,10 +2,10 @@ import { Leaf, Clock, MapPin, ShieldCheck } from "lucide-react";
 
 export default function TrustStrip() {
     const badges = [
-        { icon: Leaf, text: "Eco-Friendly Chemicals", color: "text-green-600", bg: "bg-green-50" },
-        { icon: Clock, text: "Express Delivery Available", color: "text-orange-500", bg: "bg-orange-50" },
-        { icon: MapPin, text: "Serving Dwarka & Palam", color: "text-blue-600", bg: "bg-blue-50" },
+        { icon: Leaf, text: "Petrol Wash Only", color: "text-amber-600", bg: "bg-amber-50" },
+        { icon: Clock, text: "Vacuum Steam Press", color: "text-blue-600", bg: "bg-blue-50" },
         { icon: ShieldCheck, text: "Stain Removal Experts", color: "text-purple-600", bg: "bg-purple-50" },
+        { icon: MapPin, text: "Individual Packaging", color: "text-orange-600", bg: "bg-orange-50" },
     ];
 
     return (

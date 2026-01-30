@@ -1,63 +1,60 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Shirt, Scissors, Disc, Baby, Home, Armchair, Projector } from "lucide-react"; // Projector as placeholder for Curtains
+import { Shirt, Scissors, Disc, User, Armchair, Blinds } from "lucide-react";
 import { clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
+import Link from "next/link";
 
 function cn(...inputs: (string | undefined | null | false)[]) {
     return twMerge(clsx(inputs));
 }
 
-const CATEGORIES = ["Men", "Women", "Kids", "Household"];
+const CATEGORIES = ["Men's Formal", "Ladies' Couture", "Household Care"];
 
-// Icons mapped to real services
 const SERVICES = {
-    Men: [
-        { id: 1, name: "Shirt", price: "₹100 (DC) / ₹50 (Iron)", icon: Shirt },
-        { id: 2, name: "Trousers", price: "₹100", icon: Scissors }, // Assuming Trousers price similar to shirt if not specified, but user didn't specify trousers price in "Men", user said Suit 2Pc 350, Coat 250. Let's stick to what user gave or logical defaults.
-        { id: 3, name: "Coat", price: "₹250", icon: Shirt }, // Coat icon
-        { id: 4, name: "Suit (2Pc)", price: "₹350", icon: Disc },
+    "Men's Formal": [
+        { id: 1, name: "Suit (2pc)", dc: "₹350", sp: "₹150", icon: User },
+        { id: 2, name: "Blazer/Coat", dc: "₹250", sp: "₹100", icon: Shirt },
+        { id: 3, name: "Sherwani", dc: "₹350+", sp: "₹200", icon: User },
+        { id: 4, name: "Formal Shirt", dc: "₹100", sp: "₹50", icon: Scissors },
     ],
-    Women: [
-        { id: 5, name: "Saree (Cotton)", price: "₹200", icon: Projector }, // Saree placeholder
-        { id: 6, name: "Saree (Heavy)", price: "₹250+", icon: Disc },
-        { id: 7, name: "Ladies Suit", price: "₹250", icon: Shirt },
-        { id: 8, name: "Blouse/Top", price: "₹100", icon: Scissors },
+    "Ladies' Couture": [
+        { id: 5, name: "Lehenga", dc: "₹350+", sp: "₹250", icon: Disc },
+        { id: 6, name: "Silk Saree", dc: "₹250", sp: "₹100", icon: Disc },
+        { id: 7, name: "Embroidered Gown", dc: "₹350+", sp: "₹200", icon: User },
+        { id: 8, name: "Designer Blouse", dc: "₹70", sp: "₹40", icon: Scissors },
     ],
-    Kids: [
-        { id: 9, name: "School Uniform", price: "₹100", icon: Baby },
-        { id: 10, name: "Frock / Dress", price: "₹150+", icon: Shirt },
-    ],
-    Household: [
-        { id: 11, name: "Blanket (Double)", price: "₹300", icon: Disc },
-        { id: 12, name: "Curtains", price: "₹130/panel", icon: Projector },
-        { id: 13, name: "Sofa", price: "₹150/seat", icon: Armchair },
+    "Household Care": [
+        { id: 9, name: "Blanket (Double)", dc: "₹300", sp: "-", icon: Disc },
+        { id: 10, name: "Curtains (Panel)", dc: "₹130", sp: "₹60", icon: Blinds },
+        { id: 11, name: "Sofa (Seat)", dc: "₹150", sp: "-", icon: Armchair },
     ],
 };
 
 export default function PriceCards() {
-    const [activeTab, setActiveTab] = useState("Men");
+    const [activeTab, setActiveTab] = useState("Men's Formal");
 
     return (
         <section className="py-20 px-6 relative overflow-hidden bg-white">
             <div className="max-w-4xl mx-auto">
                 <div className="text-center mb-10">
                     <h2 className="text-3xl font-bold text-blue-950 font-serif mb-4">Transparent Pricing</h2>
-                    <p className="text-slate-500 mb-6">Expert dry cleaning at affordable rates.</p>
+                    <p className="text-slate-500 mb-6">Premium Care. Honest Rates.</p>
 
                     {/* Segmented Control */}
-                    <div className="inline-flex bg-slate-100 p-1.5 rounded-full overflow-hidden shadow-inner">
+                    <div className="inline-flex flex-wrap justify-center gap-2 bg-slate-50 p-2 rounded-2xl border border-slate-100">
                         {CATEGORIES.map((cat) => (
                             <button
                                 key={cat}
                                 onClick={() => setActiveTab(cat)}
                                 className={cn(
-                                    "px-6 py-2 rounded-full text-sm font-bold transition-all duration-300",
+                                    "px-5 py-2.5 rounded-xl text-sm font-bold transition-all duration-300",
                                     activeTab === cat
-                                        ? "bg-white text-orange-600 shadow-sm ring-1 ring-black/5"
-                                        : "text-slate-500 hover:text-slate-700"
+                                        ? "bg-blue-950 text-white shadow-md shadow-blue-900/10"
+                                        : "text-slate-500 hover:text-slate-800 hover:bg-white"
                                 )}
                             >
                                 {cat}
@@ -66,40 +63,53 @@ export default function PriceCards() {
                     </div>
                 </div>
 
+                {/* Headers */}
+                <div className="hidden md:flex justify-end px-4 mb-2 text-xs font-bold text-slate-400 uppercase tracking-wider gap-8">
+                    <span className="w-20 text-right">Dry Clean</span>
+                    <span className="w-20 text-right">Steam Press</span>
+                </div>
+
                 {/* Menu Card Grid */}
-                <motion.div
-                    layout
-                    className="grid grid-cols-1 md:grid-cols-2 gap-4"
-                >
-                    <AnimatePresence mode="popLayout">
+                <motion.div layout className="flex flex-col gap-3">
+                    <AnimatePresence mode="wait">
                         {SERVICES[activeTab as keyof typeof SERVICES].map((service) => (
                             <motion.div
                                 key={service.id}
                                 layout
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                exit={{ opacity: 0, y: -10 }}
-                                transition={{ duration: 0.2 }}
-                                className="flex items-center gap-4 p-4 rounded-xl border border-slate-100 bg-slate-50/50 hover:bg-white hover:border-orange-100 hover:shadow-md transition-all group"
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                exit={{ opacity: 0, x: 10 }}
+                                className="flex items-center justify-between p-4 rounded-xl border border-slate-100 bg-white hover:border-orange-100 hover:shadow-sm transition-all group"
                             >
-                                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center text-blue-500 group-hover:text-orange-500 group-hover:scale-110 transition-all shadow-sm">
-                                    <service.icon className="w-5 h-5" strokeWidth={2} />
+                                <div className="flex items-center gap-4">
+                                    <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600 group-hover:text-orange-500 transition-colors">
+                                        <service.icon className="w-5 h-5" strokeWidth={1.5} />
+                                    </div>
+                                    <span className="font-bold text-slate-700">{service.name}</span>
                                 </div>
-                                <div className="flex-1">
-                                    <h3 className="font-bold text-slate-800 text-base">{service.name}</h3>
-                                </div>
-                                <div className="text-right">
-                                    <p className="font-bold text-blue-950 font-serif text-lg">{service.price}</p>
+
+                                <div className="flex items-center gap-2 md:gap-8 text-sm">
+                                    <div className="w-20 text-right">
+                                        <span className="block md:hidden text-[10px] text-slate-400 font-bold uppercase">DC</span>
+                                        <span className="font-bold text-blue-950">{service.dc}</span>
+                                    </div>
+                                    <div className="w-20 text-right">
+                                        <span className="block md:hidden text-[10px] text-slate-400 font-bold uppercase">Press</span>
+                                        <span className="font-medium text-slate-500">{service.sp}</span>
+                                    </div>
                                 </div>
                             </motion.div>
                         ))}
                     </AnimatePresence>
                 </motion.div>
 
-                <div className="text-center mt-8">
-                    <p className="text-xs text-slate-400 font-medium bg-slate-50 inline-block px-3 py-1 rounded-full border border-slate-100">
-                        * Prices may vary based on fabric type and ornamentation.
+                <div className="text-center mt-8 space-y-4">
+                    <p className="text-xs text-slate-400 font-medium">
+                        * Prices exclude GST. Saree polishing and rolling ("Charak") available separately.
                     </p>
+                    <Link href="/pricing" className="inline-flex items-center text-orange-600 font-bold hover:underline">
+                        View Full Price List &rarr;
+                    </Link>
                 </div>
             </div>
         </section>

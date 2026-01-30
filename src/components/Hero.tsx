@@ -9,21 +9,21 @@ export default function Hero() {
 
                 {/* Left: Text Content */}
                 <div className="relative z-10 text-center lg:text-left order-2 lg:order-1">
-                    <div className="inline-flex items-center gap-2 bg-blue-100/50 text-blue-800 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 border border-blue-200">
+                    <div className="inline-flex items-center gap-2 bg-orange-50 text-orange-900 px-4 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase mb-6 border border-orange-100">
                         <span className="relative flex h-2 w-2">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+                            <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
                         </span>
-                        Serving Dwarka, Mahavir Enclave & Palam
+                        Premium Garment Care
                     </div>
 
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-[1.1] text-blue-950 font-serif">
-                        Expert Care for Your <br />
-                        <span className="text-orange-500 italic">Favourite Clothes.</span>
+                        Expert Dry Cleaning for <br />
+                        <span className="text-orange-600 italic">Your Premium Wear.</span>
                     </h1>
 
                     <p className="text-lg md:text-xl text-slate-600 mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed font-sans">
-                        Free pickup & delivery at your doorstep. We treat every fabric with the care it deserves.
+                        Specializing in Suits, Sarees, and delicate fabrics. We don't just wash; we restore. Serving Dwarka & Palam.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
@@ -45,20 +45,20 @@ export default function Hero() {
 
                 {/* Right: Pictorial Visual */}
                 <div className="relative z-10 flex justify-center lg:justify-end order-1 lg:order-2 mb-8 lg:mb-0">
-                    <div className="relative w-full max-w-[500px] aspect-[4/3] rounded-3xl overflow-hidden shadow-xl border-4 border-white/50">
+                    <div className="relative w-full max-w-[500px] aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
                         <Image
-                            src="/hero-illustration.png"
-                            alt="Friendly delivery person handing clothes to customer"
+                            src="/premium-tuxedo.png"
+                            alt="Premium Dry Cleaning for Suits and Tuxedos"
                             fill
                             className="object-cover"
                             priority
                         />
                         {/* Floating Badge */}
-                        <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm p-4 rounded-2xl shadow-xl border border-white/50 max-w-[200px]">
-                            <p className="text-xs text-slate-500 uppercase tracking-wider font-bold mb-1">Response Time</p>
-                            <div className="text-2xl font-bold text-blue-950">24 Hours</div>
-                            <p className="text-xs text-green-600 mt-1 font-medium flex items-center gap-1">
-                                ✓ Express Delivery
+                        <div className="absolute bottom-6 left-6 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-slate-100 max-w-[220px]">
+                            <p className="text-[10px] text-slate-400 uppercase tracking-wider font-bold mb-1">Service Spotlight</p>
+                            <div className="text-lg font-bold text-blue-950 leading-tight">Suits & Couture Care</div>
+                            <p className="text-xs text-orange-600 mt-1 font-bold flex items-center gap-1">
+                                ★ Specialist Handling
                             </p>
                         </div>
                     </div>

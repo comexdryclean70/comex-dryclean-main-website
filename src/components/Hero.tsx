@@ -11,7 +11,7 @@ export default function Hero() {
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
 
                 {/* Left: Text Content */}
-                <div className="text-center lg:text-left order-2 lg:order-1">
+                <div className="text-center lg:text-left">
                     <div className="inline-flex items-center gap-2 bg-blue-900/50 backdrop-blur-md text-blue-100 px-4 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase mb-8 border border-blue-800">
                         <span className="relative flex h-2 w-2">
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
@@ -24,6 +24,17 @@ export default function Hero() {
                         Expert Dry Cleaning for <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-200 to-orange-400 italic">Your Premium Wear.</span>
                     </h1>
+
+                    {/* Mobile Image: Seamless Blend */}
+                    <div className="lg:hidden relative w-full h-80 mb-8 rounded-2xl overflow-hidden">
+                        <div className="absolute inset-0 bg-gradient-to-t from-blue-950 via-transparent to-transparent z-10"></div>
+                        <Image
+                            src="/premium-tuxedo.png"
+                            alt="Premium Dry Cleaning"
+                            fill
+                            className="object-cover object-top"
+                        />
+                    </div>
 
                     <p className="text-lg md:text-xl text-blue-100/90 mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed font-sans">
                         Traditional hand-care for modern fabrics. Serving Dwarka since 2010. We specialize in delicate handling and restoration.
@@ -45,7 +56,7 @@ export default function Hero() {
                         </a>
                     </div>
 
-                    {/* Trust Icons (Light/Transparent) */}
+                    {/* Trust Icons */}
                     <div className="mt-10 flex flex-wrap justify-center lg:justify-start gap-6 text-white/60 text-sm font-medium">
                         <span className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-orange-500"></div> 30+ Years Exp</span>
                         <span className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-orange-500"></div> German Technology</span>
@@ -53,23 +64,25 @@ export default function Hero() {
                     </div>
                 </div>
 
-                {/* Right: Pictorial Visual */}
-                <div className="flex justify-center lg:justify-end order-1 lg:order-2 mb-2 lg:mb-0">
-                    <div className="relative w-full max-w-[500px] lg:max-w-none aspect-[4/3] lg:aspect-square rounded-3xl overflow-hidden shadow-2xl border border-white/10 ring-1 ring-white/5">
+                {/* Right: Pictorial Visual (Desktop Only) */}
+                <div className="hidden lg:flex justify-end h-full relative">
+                    <div className="relative w-full max-w-md aspect-[3/4]">
+                        {/* Gradient Masks for Seamless Fade */}
+                        <div className="absolute inset-0 z-20 bg-gradient-to-b from-transparent via-transparent to-blue-950"></div>
+                        <div className="absolute inset-0 z-20 bg-gradient-to-l from-transparent via-transparent to-blue-950/20"></div>
+
                         <Image
                             src="/premium-tuxedo.png"
                             alt="Premium Dry Cleaning for Suits and Tuxedos"
                             fill
-                            className="object-cover"
+                            className="object-cover rounded-2xl grayscale-[20%]"
                             priority
                         />
-                        {/* Gradient Overlay for Mobile Fade if needed, but border radius looks cleaner */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-blue-950/80 via-transparent to-transparent lg:hidden opacity-60"></div>
 
                         {/* Floating Badge */}
-                        <div className="absolute bottom-6 left-6 bg-white/10 backdrop-blur-md p-4 rounded-xl shadow-lg border border-white/20 max-w-[220px]">
-                            <p className="text-[10px] text-orange-200 uppercase tracking-wider font-bold mb-1">Service Spotlight</p>
-                            <div className="text-lg font-bold text-white leading-tight">Suits & Couture Care</div>
+                        <div className="absolute bottom-12 right-0 left-12 bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-2xl border border-white/10 z-30">
+                            <p className="text-[10px] text-orange-300 uppercase tracking-wider font-bold mb-2">Service Spotlight</p>
+                            <div className="text-xl font-bold text-white leading-tight">Suits & Couture Care</div>
                         </div>
                     </div>
                 </div>
@@ -77,4 +90,3 @@ export default function Hero() {
         </section>
     );
 }
-

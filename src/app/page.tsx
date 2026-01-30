@@ -4,6 +4,7 @@ import TrustStrip from "@/components/TrustStrip";
 import ProcessSteps from "@/components/ProcessSteps";
 import PriceCards from "@/components/PriceCards";
 import BookingUI from "@/components/BookingUI";
+import TrustSection from "@/components/TrustSection";
 import MainFooter from "@/components/MainFooter";
 import StickyFooter from "@/components/StickyFooter";
 
@@ -34,6 +35,7 @@ export default function Home() {
       <ProcessSteps />
       <PriceCards />
       <BookingUI />
+      <TrustSection />
       <MainFooter />
       <StickyFooter />
     </main>

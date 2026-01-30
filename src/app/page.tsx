@@ -1,4 +1,11 @@
 import Image from "next/image";
+import Hero from "@/components/Hero";
+import TrustStrip from "@/components/TrustStrip";
+import ProcessSteps from "@/components/ProcessSteps";
+import PriceCards from "@/components/PriceCards";
+import BookingUI from "@/components/BookingUI";
+import MainFooter from "@/components/MainFooter";
+import StickyFooter from "@/components/StickyFooter";
 
 export default function Home() {
   return (

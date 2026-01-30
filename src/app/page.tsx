@@ -3,9 +3,9 @@ import Hero from "@/components/Hero";
 import TrustStrip from "@/components/TrustStrip";
 import ProcessSteps from "@/components/ProcessSteps";
 import PriceCards from "@/components/PriceCards";
-import BookingUI from "@/components/BookingUI";
 import TrustGallery from "@/components/TrustGallery";
 import CallToAction from "@/components/CallToAction";
+import BookingWizard from "@/components/BookingWizard";
 import MainFooter from "@/components/MainFooter";
 import StickyFooter from "@/components/StickyFooter";
 
@@ -35,7 +35,7 @@ export default function Home() {
       <TrustStrip />
       <ProcessSteps />
       <PriceCards />
-      <BookingUI />
+      <BookingWizard />
       <TrustGallery />
       <CallToAction />
       <MainFooter />

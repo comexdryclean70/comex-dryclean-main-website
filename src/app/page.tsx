@@ -21,7 +21,8 @@ export default function Home() {
             priority
           />
         </div>
-        <div className="hidden md:block">
+        <div className="hidden md:flex items-center gap-6">
+          <a href="/pricing" className="text-slate-600 font-bold hover:text-blue-600 transition-colors">Pricing</a>
           <a href="tel:9250885310" className="text-sm font-bold bg-white/80 backdrop-blur-md px-4 py-2 rounded-full border border-white shadow-sm hover:text-orange-600 transition-colors">
             📞 9250-885-310
           </a>

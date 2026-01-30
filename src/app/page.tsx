@@ -38,9 +38,13 @@ export default function Home() {
       <MastersTouch />
       <ProcessSteps />
       <PriceCards />
-      <Suspense fallback={<div className="w-full h-96 bg-slate-50 flex items-center justify-center text-slate-400">Loading Booking Wizard...</div>}>
-        <BookingWizard />
-      </Suspense>
+      <section id="booking" className="py-24 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-6">
+          <Suspense fallback={<div className="w-full h-96 bg-white rounded-3xl shadow-xl flex items-center justify-center text-slate-400">Loading Booking Wizard...</div>}>
+            <BookingWizard />
+          </Suspense>
+        </div>
+      </section>
       <TrustGallery />
       <CallToAction />
       <MainFooter />

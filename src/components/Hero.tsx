@@ -1,92 +1,108 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Calendar, Phone } from "lucide-react";
+import { ArrowRight, Calendar, Sparkles } from "lucide-react";
 
 export default function Hero() {
     return (
-        <section className="relative pt-28 pb-12 px-6 lg:pt-36 lg:pb-24 overflow-hidden bg-blue-950">
-            {/* Background Gradient Mesh */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-blue-900/40 via-transparent to-transparent opacity-50"></div>
+        <section className="relative w-full h-auto min-h-[90vh] bg-[#0a0f1c] overflow-hidden flex items-center">
 
-            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
+            {/* Background Image - The "Atmospheric Blend" */}
+            <div className="absolute inset-0 z-0 select-none pointer-events-none">
+                {/* Desktop: Right-side blend with gradient mask */}
+                <div className="hidden lg:block absolute inset-0">
+                    <div className="absolute top-0 right-0 w-[65%] h-full">
+                        <div style={{ maskImage: "linear-gradient(to right, transparent, black 40%)", WebkitMaskImage: "linear-gradient(to right, transparent, black 40%)" }} className="w-full h-full relative">
+                            <Image
+                                src="/hero-cinematic.png"
+                                alt="Dark Fabric Texture"
+                                fill
+                                className="object-cover object-center opacity-90"
+                                priority
+                            />
+                        </div>
+                    </div>
+                    {/* Seamless Gradient Overlay from Left */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-[#0a0f1c] via-[#0a0f1c] to-transparent z-10 w-[60%]"></div>
+                </div>
 
-                {/* Left: Text Content */}
-                <div className="text-center lg:text-left">
-                    <div className="inline-flex items-center gap-2 bg-blue-900/50 backdrop-blur-md text-blue-100 px-4 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase mb-8 border border-blue-800">
-                        <span className="relative flex h-2 w-2">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
-                        </span>
-                        Premium Garment Care
+                {/* Mobile: Top overlay with dimming */}
+                <div className="lg:hidden absolute inset-0 h-[65%]">
+                    <Image
+                        src="/hero-cinematic.png"
+                        alt="Dark Fabric Texture"
+                        fill
+                        className="object-cover object-top opacity-60"
+                        priority
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-b from-[#0a0f1c]/30 via-[#0a0f1c]/80 to-[#0a0f1c]"></div>
+                </div>
+            </div>
+
+            {/* Content Container */}
+            <div className="relative z-20 w-full max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 pt-24 lg:pt-0">
+
+                {/* Text Content */}
+                <div className="space-y-8 lg:pr-10">
+                    {/* Badge */}
+                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-orange-400 text-xs font-bold uppercase tracking-widest shadow-lg animate-pulse">
+                        <Sparkles className="w-3 h-3" />
+                        <span>German Eco-Solvents</span>
                     </div>
 
-                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-[1.1] text-white font-serif">
-                        Expert Dry Cleaning for <br />
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-200 to-orange-400 italic">Your Premium Wear.</span>
+                    <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight">
+                        Expert Care for <br />
+                        <span className="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">Premium Wear</span>
                     </h1>
 
-                    {/* Mobile Image: Seamless Blend */}
-                    <div className="lg:hidden relative w-full h-80 mb-8 rounded-2xl overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-t from-blue-950 via-transparent to-transparent z-10"></div>
-                        <Image
-                            src="/premium-tuxedo.png"
-                            alt="Premium Dry Cleaning"
-                            fill
-                            className="object-cover object-top"
-                        />
-                    </div>
-
-                    <p className="text-lg md:text-xl text-blue-100/90 mb-10 max-w-lg mx-auto lg:mx-0 leading-relaxed font-sans">
-                        Traditional hand-care for modern fabrics. Serving Dwarka since 2010. We specialize in delicate handling and restoration.
+                    <p className="text-lg md:text-xl text-slate-300 max-w-xl font-light leading-relaxed">
+                        Traditional hand-finishing meets modern eco-technology.
+                        We don't just clean your clothes; we extend their lifespan.
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <div className="flex flex-col sm:flex-row gap-4 pt-4">
                         <Link
                             href="/booking"
-                            className="inline-flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-xl transition-all text-lg shadow-lg shadow-orange-500/30 hover:-translate-y-1 hover:shadow-orange-500/50"
+                            className="group inline-flex items-center justify-center gap-3 bg-white text-[#0a0f1c] font-bold py-4 px-8 rounded-full transition-all text-lg shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:scale-105"
                         >
-                            <Calendar className="w-5 h-5" /> Book Pickup
+                            <Calendar className="w-5 h-5 text-orange-600 group-hover:rotate-12 transition-transform" />
+                            <span>Book Pickup</span>
                         </Link>
 
                         <a
                             href="tel:9250885310"
-                            className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white font-bold py-4 px-8 rounded-xl transition-all text-lg border border-white/20"
+                            className="inline-flex items-center justify-center gap-3 bg-transparent border border-white/20 hover:border-white/50 text-white font-medium py-4 px-8 rounded-full transition-all text-lg backdrop-blur-sm hover:bg-white/5"
                         >
-                            <Phone className="w-5 h-5" /> 9250-885-310
+                            <span>9250-885-310</span>
+                            <ArrowRight className="w-4 h-4 opacity-50" />
                         </a>
                     </div>
 
-                    {/* Trust Icons */}
-                    <div className="mt-10 flex flex-wrap justify-center lg:justify-start gap-6 text-white/60 text-sm font-medium">
-                        <span className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-orange-500"></div> 30+ Years Exp</span>
-                        <span className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-orange-500"></div> German Technology</span>
-                        <span className="flex items-center gap-2"><div className="w-1.5 h-1.5 rounded-full bg-orange-500"></div> Premium Handling</span>
+                    {/* Trust Indicators */}
+                    <div className="flex items-center gap-6 pt-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                        <span className="text-xs uppercase tracking-widest text-slate-400 border-l px-4 border-slate-700">Trusted by 5000+ Families in Dwarka</span>
                     </div>
                 </div>
 
-                {/* Right: Pictorial Visual (Desktop Only) */}
-                <div className="hidden lg:flex justify-end h-full relative">
-                    <div className="relative w-full max-w-md aspect-[3/4]">
-                        {/* Gradient Masks for Seamless Fade */}
-                        <div className="absolute inset-0 z-20 bg-gradient-to-b from-transparent via-transparent to-blue-950"></div>
-                        <div className="absolute inset-0 z-20 bg-gradient-to-l from-transparent via-transparent to-blue-950/20"></div>
-
-                        <Image
-                            src="/premium-tuxedo.png"
-                            alt="Premium Dry Cleaning for Suits and Tuxedos"
-                            fill
-                            className="object-cover rounded-2xl grayscale-[20%]"
-                            priority
-                        />
-
-                        {/* Floating Badge */}
-                        <div className="absolute bottom-12 right-0 left-12 bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-2xl border border-white/10 z-30">
-                            <p className="text-[10px] text-orange-300 uppercase tracking-wider font-bold mb-2">Service Spotlight</p>
-                            <div className="text-xl font-bold text-white leading-tight">Suits & Couture Care</div>
+                {/* Desktop Right Side - Empty for Image Blend, but holds the Floating Badge */}
+                <div className="hidden lg:flex items-center justify-center relative">
+                    {/* Floating Glassmorphism Badge */}
+                    <div className="absolute right-10 bottom-20 w-64 bg-white/5 backdrop-blur-xl border border-white/10 p-4 rounded-2xl shadow-2xl animate-bounce-slow">
+                        <div className="flex items-center gap-3 mb-2">
+                            <div className="w-8 h-8 rounded-full bg-green-500/20 text-green-400 flex items-center justify-center">
+                                <Sparkles className="w-4 h-4" />
+                            </div>
+                            <span className="text-white font-bold text-sm">Eco-Friendly</span>
                         </div>
+                        <p className="text-xs text-slate-400 leading-relaxed">
+                            We use biodegradable solvents that are tough on stains but gentle on skin and fabric.
+                        </p>
                     </div>
                 </div>
+
             </div>
+
+            {/* Soft bottom fade to merge with next section */}
+            <div className="absolute bottom-0 w-full h-24 bg-gradient-to-t from-[#0a0f1c] to-transparent z-10"></div>
         </section>
     );
 }

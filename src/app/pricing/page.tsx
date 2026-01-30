@@ -80,8 +80,8 @@ export default function PricingPage() {
                                 key={category}
                                 onClick={() => setActiveTab(category as keyof typeof PRICING_DATA)}
                                 className={`px-6 py-3 rounded-full text-sm font-bold whitespace-nowrap transition-all shadow-sm ${activeTab === category
-                                        ? 'bg-blue-600 text-white shadow-blue-200'
-                                        : 'bg-white text-slate-600 hover:bg-blue-50'
+                                    ? 'bg-blue-600 text-white shadow-blue-200'
+                                    : 'bg-white text-slate-600 hover:bg-blue-50'
                                     }`}
                             >
                                 {category}
@@ -92,45 +92,75 @@ export default function PricingPage() {
                     {/* Items Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <AnimatePresence mode="wait">
-                            {PRICING_DATA[activeTab].map((item) => (
-                                <motion.div
-                                    key={item.id}
-                                    initial={{ opacity: 0, y: 10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: -10 }}
-                                    className={`bg-white p-4 rounded-2xl border flex items-center justify-between transition-all ${cart[item.id] ? 'border-blue-500 shadow-md ring-1 ring-blue-500 bg-blue-50/10' : 'border-slate-100 shadow-sm'
-                                        }`}
-                                >
-                                    <div className="flex items-center gap-4">
-                                        <div className={`p-3 rounded-xl ${cart[item.id] ? 'bg-blue-100 text-blue-600' : 'bg-slate-100 text-slate-500'}`}>
-                                            <item.icon className="w-6 h-6" />
-                                        </div>
-                                        <div>
-                                            <h3 className="font-bold text-slate-800">{item.name}</h3>
-                                            <p className="text-sm font-medium text-blue-600">{item.displayPrice}</p>
-                                        </div>
-                                    </div>
+                            {PRICING_DATA[activeTab].map((item) => {
+                                // Detect Variable Pricing: If displayPrice has a range "-" AND max > 2*min (simplified check: if it has a wide range string or huge gap)
+                                // User rule: maxPrice > 2 * minPrice.
+                                // Parsing displayPrice "₹350-2000" -> 350, 2000.
+                                const priceParts = item.displayPrice.replace(/₹/g, '').split('-');
+                                const min = parseInt(priceParts[0]);
+                                const max = priceParts.length > 1 ? parseInt(priceParts[1]) : min;
+                                const isVariable = max > (min * 2);
 
-                                    {/* Add/Remove Controls */}
-                                    <div className="flex items-center gap-3 bg-slate-50 rounded-lg p-1 border border-slate-200">
-                                        <button
-                                            onClick={() => updateQuantity(item.id, -1)}
-                                            className={`w-8 h-8 flex items-center justify-center rounded-md transition-colors ${!cart[item.id] ? 'text-slate-300 pointer-events-none' : 'hover:bg-white text-slate-600 shadow-sm'}`}
-                                        >
-                                            <Minus className="w-4 h-4" />
-                                        </button>
-                                        <span className="w-4 text-center font-bold text-slate-700 text-sm">
-                                            {cart[item.id] || 0}
-                                        </span>
-                                        <button
-                                            onClick={() => updateQuantity(item.id, 1)}
-                                            className="w-8 h-8 flex items-center justify-center rounded-md hover:bg-white text-blue-600 shadow-sm transition-colors"
-                                        >
-                                            <Plus className="w-4 h-4" />
-                                        </button>
-                                    </div>
-                                </motion.div>
-                            ))}
+                                return (
+                                    <motion.div
+                                        key={item.id}
+                                        initial={{ opacity: 0, y: 10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        exit={{ opacity: 0, y: -10 }}
+                                        className={`bg-white p-4 rounded-2xl border flex items-center justify-between transition-all ${cart[item.id] ? 'border-blue-500 shadow-md ring-1 ring-blue-500 bg-blue-50/10' : 'border-slate-100 shadow-sm'
+                                            }`}
+                                    >
+                                        <div className="flex items-center gap-4">
+                                            <div className={`p-3 rounded-xl ${cart[item.id] ? 'bg-blue-100 text-blue-600' : 'bg-slate-100 text-slate-500'}`}>
+                                                <item.icon className="w-6 h-6" />
+                                            </div>
+                                            <div>
+                                                <h3 className="font-bold text-slate-800 flex items-center gap-2">
+                                                    {item.name}
+                                                    {isVariable && (
+                                                        <span className="text-[10px] bg-orange-100 text-orange-700 px-2 py-0.5 rounded-full border border-orange-200 uppercase tracking-tighter font-bold">
+                                                            Start From
+                                                        </span>
+                                                    )}
+                                                </h3>
+                                                <p className="text-sm font-medium text-blue-600">{item.displayPrice}</p>
+                                            </div>
+                                        </div>
+
+                                        {/* Add/Remove Controls */}
+                                        <div className="flex items-center gap-3 bg-slate-50 rounded-lg p-1 border border-slate-200">
+                                            <button
+                                                onClick={() => updateQuantity(item.id, -1)}
+                                                className={`w-8 h-8 flex items-center justify-center rounded-md transition-colors ${!cart[item.id] ? 'text-slate-300 pointer-events-none' : 'hover:bg-white text-slate-600 shadow-sm'}`}
+                                            >
+                                                <Minus className="w-4 h-4" />
+                                            </button>
+                                            <span className="w-4 text-center font-bold text-slate-700 text-sm">
+                                                {cart[item.id] || 0}
+                                            </span>
+                                            <button
+                                                onClick={() => {
+                                                    updateQuantity(item.id, 1);
+                                                    if (isVariable) {
+                                                        // Trigger Toast
+                                                        const toast = document.createElement('div');
+                                                        toast.className = 'fixed top-24 right-4 bg-orange-600 text-white px-4 py-3 rounded-xl shadow-xl z-50 animate-in slide-in-from-right fade-in duration-300 flex items-center gap-3 text-sm font-medium max-w-xs';
+                                                        toast.innerHTML = '<span>⚠️ Note: Heavy embroidery or delicate fabrics may incur higher charges.</span>';
+                                                        document.body.appendChild(toast);
+                                                        setTimeout(() => {
+                                                            toast.classList.add('opacity-0', 'translate-x-full', 'transition-all');
+                                                            setTimeout(() => toast.remove(), 500);
+                                                        }, 3000);
+                                                    }
+                                                }}
+                                                className="w-8 h-8 flex items-center justify-center rounded-md hover:bg-white text-blue-600 shadow-sm transition-colors"
+                                            >
+                                                <Plus className="w-4 h-4" />
+                                            </button>
+                                        </div>
+                                    </motion.div>
+                                );
+                            })}
                         </AnimatePresence>
                     </div>
                 </div>
@@ -165,12 +195,15 @@ export default function PricingPage() {
 
                                 <div className="bg-orange-50 p-4 rounded-xl border border-orange-100">
                                     <div className="flex justify-between items-end mb-1">
-                                        <span className="text-slate-600 font-medium">Total Estimate</span>
-                                        <span className="text-2xl font-bold text-blue-950">₹{cartTotal}</span>
+                                        <span className="text-slate-600 font-medium text-xs">Base Estimate (Starting From)</span>
+                                        <span className="text-2xl font-bold text-blue-950">₹{cartTotal}*</span>
                                     </div>
-                                    <p className="text-[10px] text-orange-800/70 flex items-start gap-1 leading-tight">
-                                        <Info className="w-3 h-3 shrink-0 mt-0.5" />
-                                        Final price depends on fabric type (e.g., Silk/Zari) and heavy stains.
+                                </div>
+
+                                <div className="bg-blue-50 p-4 rounded-xl border border-blue-100 flex items-start gap-3">
+                                    <Info className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                                    <p className="text-xs text-blue-800 leading-snug">
+                                        Final rates depend on fabric type (Silk, Zari, Embroidery). Exact cost will be confirmed during pickup inspection.
                                     </p>
                                 </div>
 

@@ -14,7 +14,7 @@ export default function StickyFooter() {
                 className="bg-white/80 backdrop-blur-lg border border-white/40 p-2 rounded-2xl shadow-[0_8px_32px_0_rgba(31,38,135,0.15)]"
             >
                 <Link
-                    href="#booking"
+                    href="/booking"
                     className="flex items-center justify-center gap-2 w-full bg-orange-500 text-white font-bold py-3.5 rounded-xl text-lg shadow-lg shadow-orange-500/30 active:scale-[0.98] transition-transform"
                 >
                     <CalendarCheck className="w-5 h-5" /> Schedule Pickup

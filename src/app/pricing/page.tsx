@@ -46,7 +46,7 @@ export default function PricingPage() {
             .join(',');
 
         // Check if Booking Page exists, otherwise assume main page with query or log
-        router.push(`/?booking=true&items=${itemsParam}#booking`);
+        router.push(`/booking?items=${itemsParam}`);
     };
 
     return (

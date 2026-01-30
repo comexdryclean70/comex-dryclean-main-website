@@ -42,7 +42,7 @@ export default function Hero() {
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                         <Link
-                            href="#booking"
+                            href="/booking"
                             className="inline-flex items-center justify-center gap-2 bg-orange-500 hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-xl transition-all text-lg shadow-lg shadow-orange-500/30 hover:-translate-y-1 hover:shadow-orange-500/50"
                         >
                             <Calendar className="w-5 h-5" /> Book Pickup

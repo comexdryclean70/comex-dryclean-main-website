@@ -8,7 +8,6 @@ import ProcessSteps from "@/components/ProcessSteps";
 import PriceCards from "@/components/PriceCards";
 import TrustEditorial from "@/components/TrustEditorial";
 import CallToAction from "@/components/CallToAction";
-import BookingWizard from "@/components/BookingWizard";
 import StorySection from "@/components/StorySection";
 import ComparisonSection from "@/components/ComparisonSection";
 import MainFooter from "@/components/MainFooter";
@@ -39,13 +38,7 @@ export default function Home() {
       <MastersTouch />
       <ProcessSteps />
       <PriceCards />
-      <section id="booking" className="py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <Suspense fallback={<div className="w-full h-96 bg-white rounded-3xl shadow-xl flex items-center justify-center text-slate-400">Loading Booking Wizard...</div>}>
-            <BookingWizard />
-          </Suspense>
-        </div>
-      </section>
+
       <TrustEditorial />
       <CallToAction />
       <MainFooter />

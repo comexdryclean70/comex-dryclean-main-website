@@ -35,7 +35,7 @@ export default function CallToAction() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Link href="/pricing" className="w-full sm:w-auto">
+                        <Link href="/booking" className="w-full sm:w-auto">
                             <motion.button
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}

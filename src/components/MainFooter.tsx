@@ -92,6 +92,7 @@ export default function MainFooter() {
                         <a href="#" className="hover:text-white">Terms of Service</a>
                     </div>
                 </div>
+            </div>
         </footer>
     );
 }

@@ -13,6 +13,8 @@ import StorySection from "@/components/StorySection";
 import ComparisonSection from "@/components/ComparisonSection";
 import MainFooter from "@/components/MainFooter";
 import StickyFooter from "@/components/StickyFooter";
+import MainFooter from "@/components/MainFooter";
+import StickyFooter from "@/components/StickyFooter";
 
 export default function Home() {
   return (

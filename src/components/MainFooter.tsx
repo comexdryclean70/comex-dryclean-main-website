@@ -8,9 +8,9 @@ export default function MainFooter() {
 
                 {/* Column 1: About */}
                 <div>
-                    <div className="bg-white/10 p-4 rounded-xl inline-block mb-6 backdrop-blur-sm">
-                        <div className="relative w-32 h-10">
-                            <Image src="/comex-logo.png" alt="Comex" fill className="object-contain" />
+                    <div className="mb-6">
+                        <div className="relative w-40 h-12">
+                            <Image src="/logo-transparent.png" alt="Comex" fill className="object-contain object-left" />
                         </div>
                     </div>
                     <p className="text-blue-200/80 leading-relaxed mb-6 max-w-sm">

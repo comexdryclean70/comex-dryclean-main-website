@@ -18,7 +18,7 @@ export default function Home() {
       <nav className="absolute top-0 left-0 w-full p-6 z-30 flex justify-between items-center max-w-7xl mx-auto left-0 right-0">
         <div className="w-44 md:w-56 relative h-16 md:h-20">
           <Image
-            src="/comex-logo.png"
+            src="/logo-transparent.png"
             alt="Comex Drycleaners"
             fill
             className="object-contain object-left"

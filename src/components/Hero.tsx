@@ -49,12 +49,12 @@ export default function Hero() {
                         <span>German Eco-Solvents</span>
                     </div>
 
-                    <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight">
+                    <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.05] tracking-tight drop-shadow-2xl">
                         Expert Care for <br />
-                        <span className="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">Premium Wear</span>
+                        <span className="font-serif italic text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-500 pb-2 inline-block">Premium Wear</span>
                     </h1>
 
-                    <p className="text-lg md:text-xl text-slate-300 max-w-xl font-light leading-relaxed">
+                    <p className="text-lg md:text-xl text-slate-300 max-w-xl font-normal leading-relaxed opacity-90">
                         Traditional hand-finishing meets modern eco-technology.
                         We don't just clean your clothes; we extend their lifespan.
                     </p>

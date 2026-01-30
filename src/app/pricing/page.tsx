@@ -221,30 +221,34 @@ export default function PricingPage() {
                 {/* Mobile Bottom Bar */}
                 <AnimatePresence>
                     {cartCount > 0 && (
-                        <motion.div
-                            initial={{ y: 200 }}
-                            animate={{ y: 0 }}
-                            exit={{ y: 200 }}
-                            className="fixed bottom-6 left-6 right-6 z-50 md:hidden"
-                        >
-                            <div className="bg-blue-950 text-white rounded-2xl shadow-2xl p-4 flex items-center justify-between border border-blue-800/50 backdrop-blur-xl bg-blue-950/90" onClick={handleBookNow}>
-                                <div className="flex flex-col">
-                                    <span className="text-xs text-blue-300 font-medium">{cartCount} Items Selected</span>
-                                    <div className="flex items-baseline gap-1">
-                                        <span className="font-bold text-xl">₹{cartTotal}</span>
-                                        <span className="text-xs text-blue-400">(approx)</span>
+                        <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-gradient-to-t from-slate-100/50 to-transparent pb-6 px-4">
+                            <motion.div
+                                initial={{ y: 100 }}
+                                animate={{ y: 0 }}
+                                exit={{ y: 200 }}
+                                className="bg-blue-950 text-white rounded-2xl shadow-xl p-4 border border-blue-800/50 backdrop-blur-xl bg-blue-950/95"
+                            >
+                                <div className="flex items-center justify-between mb-3" onClick={handleBookNow}>
+                                    <div className="flex flex-col">
+                                        <span className="text-[10px] text-blue-300 font-bold uppercase tracking-wider">{cartCount} Items</span>
+                                        <div className="flex items-baseline gap-1">
+                                            <span className="font-bold text-xl">₹{cartTotal}*</span>
+                                            <span className="text-xs text-blue-400 font-medium">(Base)</span>
+                                        </div>
                                     </div>
+                                    <button className="bg-orange-500 text-white px-6 py-2.5 rounded-xl font-bold text-sm shadow-lg shadow-orange-900/20 flex items-center gap-2 active:scale-95 transition-transform">
+                                        Book Pickup <ArrowRight className="w-4 h-4" />
+                                    </button>
                                 </div>
-                                <button className="bg-orange-500 text-white px-6 py-2.5 rounded-xl font-bold text-sm shadow-lg shadow-orange-900/20 flex items-center gap-2">
-                                    Book Now <ArrowRight className="w-4 h-4" />
-                                </button>
-                            </div>
-                            <div className="text-center mt-2">
-                                <p className="text-[10px] text-slate-500 bg-white/90 inline-block px-2 py-0.5 rounded-full shadow-sm backdrop-blur">
-                                    Final price may vary based on fabric.
-                                </p>
-                            </div>
-                        </motion.div>
+
+                                <div className="bg-blue-900/50 rounded-lg p-2 flex items-start gap-2">
+                                    <Info className="w-3 h-3 text-blue-300 shrink-0 mt-0.5" />
+                                    <p className="text-[10px] text-blue-200 leading-tight">
+                                        *Base estimate. Final rates depend on fabric type (Silk/Zari) & inspection.
+                                    </p>
+                                </div>
+                            </motion.div>
+                        </div>
                     )}
                 </AnimatePresence>
             </div>

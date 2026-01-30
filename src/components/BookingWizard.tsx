@@ -2,8 +2,9 @@
 
 import { useState, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Calendar, Clock, ChevronRight, ArrowLeft, Shirt, MapPin, Phone, User, Check, AlertTriangle } from "lucide-react";
+import { Calendar, Clock, ChevronRight, ArrowLeft, Shirt, MapPin, Phone, User, Check, AlertTriangle, Trash2, Plus, Minus } from "lucide-react";
 import { useSearchParams } from "next/navigation";
+import { PRICING_DATA } from "@/lib/pricingData";
 
 // --- Types ---
 type FormData = {
@@ -108,7 +109,7 @@ export default function BookingWizard() {
 
     const isStep1Valid = formData.date && formData.time;
     const isStep2Valid = formData.name && formData.phone.length >= 10 && formData.address;
-    const isStep3Valid = formData.items.length > 0;
+    const isStep3Valid = cart.length > 0;
 
     const variants = {
         enter: (direction: number) => ({
@@ -202,8 +203,8 @@ export default function BookingWizard() {
                                                             key={i}
                                                             onClick={() => setFormData({ ...formData, date: d.toDateString() })}
                                                             className={`shrink-0 min-w-[80px] p-3 rounded-2xl border transition-all duration-200 flex flex-col items-center gap-1 ${isSelected
-                                                                    ? 'bg-blue-600 border-blue-600 text-white shadow-lg shadow-blue-200 scale-105'
-                                                                    : 'bg-white border-slate-200 text-slate-600 hover:border-blue-300 hover:bg-blue-50'
+                                                                ? 'bg-blue-600 border-blue-600 text-white shadow-lg shadow-blue-200 scale-105'
+                                                                : 'bg-white border-slate-200 text-slate-600 hover:border-blue-300 hover:bg-blue-50'
                                                                 }`}
                                                         >
                                                             <span className="text-xs font-bold opacity-80">{label}</span>
@@ -225,8 +226,8 @@ export default function BookingWizard() {
                                                         key={slot.id}
                                                         onClick={() => setFormData({ ...formData, time: slot.label })}
                                                         className={`p-4 rounded-xl border text-left transition-all relative overflow-hidden ${formData.time === slot.label
-                                                                ? 'bg-blue-50 border-blue-500 text-blue-800 ring-1 ring-blue-500'
-                                                                : 'bg-white border-slate-200 text-slate-600 hover:border-blue-300'
+                                                            ? 'bg-blue-50 border-blue-500 text-blue-800 ring-1 ring-blue-500'
+                                                            : 'bg-white border-slate-200 text-slate-600 hover:border-blue-300'
                                                             }`}
                                                     >
                                                         <div className="text-sm font-bold">{slot.label}</div>
@@ -327,8 +328,8 @@ export default function BookingWizard() {
                                 onClick={handleNext}
                                 disabled={step === 1 ? !isStep1Valid : !isStep2Valid}
                                 className={`px-8 py-3 rounded-xl font-bold flex items-center gap-2 transition-all ${(step === 1 ? isStep1Valid : isStep2Valid)
-                                        ? 'bg-blue-600 text-white shadow-lg shadow-blue-200 hover:bg-blue-700 hover:translate-x-1'
-                                        : 'bg-slate-200 text-slate-400 cursor-not-allowed'
+                                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-200 hover:bg-blue-700 hover:translate-x-1'
+                                    : 'bg-slate-200 text-slate-400 cursor-not-allowed'
                                     }`}
                             >
                                 Next Step <ChevronRight className="w-5 h-5" />
@@ -338,8 +339,8 @@ export default function BookingWizard() {
                                 onClick={handleSubmit}
                                 disabled={!isStep3Valid || isSubmitting}
                                 className={`w-full md:w-auto px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all shadow-lg text-lg ${isStep3Valid
-                                        ? 'bg-orange-500 text-white shadow-orange-200 hover:bg-orange-600 active:scale-95'
-                                        : 'bg-slate-200 text-slate-400 cursor-not-allowed'
+                                    ? 'bg-orange-500 text-white shadow-orange-200 hover:bg-orange-600 active:scale-95'
+                                    : 'bg-slate-200 text-slate-400 cursor-not-allowed'
                                     }`}
                             >
                                 {isSubmitting ? 'Scheduling...' : 'Confirm Pickup'}

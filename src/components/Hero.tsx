@@ -18,12 +18,12 @@ export default function Hero() {
                     </div>
 
                     <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-[1.1] text-blue-950 font-serif">
-                        Expert Dry Cleaning for <br />
-                        <span className="text-orange-600 italic">Your Premium Wear.</span>
+                        Traditional Care for <br />
+                        <span className="text-orange-600 italic">Modern Wear.</span>
                     </h1>
 
                     <p className="text-lg md:text-xl text-slate-600 mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed font-sans">
-                        Specializing in Suits, Sarees, and delicate fabrics. We don't just wash; we restore. Serving Dwarka & Palam.
+                        Serving Dwarka since the 90s. We use time-tested, hand-finish techniques to protect your most expensive fabrics.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">

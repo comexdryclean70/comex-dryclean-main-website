@@ -6,7 +6,7 @@ import TrustStrip from "@/components/TrustStrip";
 import MastersTouch from "@/components/MastersTouch";
 import ProcessSteps from "@/components/ProcessSteps";
 import PriceCards from "@/components/PriceCards";
-import TrustGallery from "@/components/TrustGallery";
+import TrustEditorial from "@/components/TrustEditorial";
 import CallToAction from "@/components/CallToAction";
 import BookingWizard from "@/components/BookingWizard";
 import StorySection from "@/components/StorySection";
@@ -46,7 +46,7 @@ export default function Home() {
           </Suspense>
         </div>
       </section>
-      <TrustGallery />
+      <TrustEditorial />
       <CallToAction />
       <MainFooter />
       <StickyFooter />

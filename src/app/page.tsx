@@ -5,6 +5,7 @@ import ProcessSteps from "@/components/ProcessSteps";
 import PriceCards from "@/components/PriceCards";
 import BookingUI from "@/components/BookingUI";
 import TrustGallery from "@/components/TrustGallery";
+import CallToAction from "@/components/CallToAction";
 import MainFooter from "@/components/MainFooter";
 import StickyFooter from "@/components/StickyFooter";
 
@@ -36,6 +37,7 @@ export default function Home() {
       <PriceCards />
       <BookingUI />
       <TrustGallery />
+      <CallToAction />
       <MainFooter />
       <StickyFooter />
     </main>

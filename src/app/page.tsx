@@ -9,8 +9,8 @@ import PriceCards from "@/components/PriceCards";
 import TrustGallery from "@/components/TrustGallery";
 import CallToAction from "@/components/CallToAction";
 import BookingWizard from "@/components/BookingWizard";
-import MainFooter from "@/components/MainFooter";
-import StickyFooter from "@/components/StickyFooter";
+import StorySection from "@/components/StorySection";
+import ComparisonSection from "@/components/ComparisonSection";
 
 export default function Home() {
   return (
@@ -29,6 +29,10 @@ export default function Home() {
       </nav>
 
       <Hero />
+      <StorySection />
+      <ComparisonSection />
+
+      {/* Removed Redundant Sections if Story/Comparison replace them, but keeping TrustStrip for stats if needed */}
       <TrustStrip />
       <MastersTouch />
       <ProcessSteps />

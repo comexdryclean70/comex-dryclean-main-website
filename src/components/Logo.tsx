@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 type LogoProps = {
     variant?: "light" | "dark"; // dark = for dark backgrounds (white text), light = for light backgrounds (blue text)
@@ -9,16 +10,15 @@ export default function Logo({ variant = "dark", className }: LogoProps) {
     const isDark = variant === "dark";
 
     return (
-        <div className={cn("flex flex-col leading-none select-none", className)}>
-            <span className="font-lobster text-[#D32F2F] text-4xl md:text-5xl">
-                Comex
-            </span>
-            <span className={cn(
-                "font-sans font-bold text-[10px] md:text-xs tracking-[0.2em] -mt-1 ml-1",
-                isDark ? "text-white/90" : "text-blue-900"
-            )}>
-                DRY CLEANER
-            </span>
+        <div className={cn("relative", className)}>
+            <Image
+                src="/logo-official.png"
+                alt="Comex Dry Cleaners"
+                width={200}
+                height={80}
+                className={cn("w-auto h-auto object-contain", isDark && "brightness-0 invert")}
+                priority
+            />
         </div>
     );
 }

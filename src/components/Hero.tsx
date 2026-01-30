@@ -77,12 +77,4 @@ export default function Hero() {
         </section>
     );
 }
-                                ★ Specialist Handling
-                            </p >
-                        </div >
-                    </div >
-                </div >
-            </div >
-        </section >
-    );
-}
+

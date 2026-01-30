@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import Image from "next/image";
 import Hero from "@/components/Hero";
 import TrustStrip from "@/components/TrustStrip";
+import MastersTouch from "@/components/MastersTouch";
 import ProcessSteps from "@/components/ProcessSteps";
 import PriceCards from "@/components/PriceCards";
 import TrustGallery from "@/components/TrustGallery";
@@ -34,6 +35,7 @@ export default function Home() {
 
       <Hero />
       <TrustStrip />
+      <MastersTouch />
       <ProcessSteps />
       <PriceCards />
       <Suspense fallback={<div className="w-full h-96 bg-slate-50 flex items-center justify-center text-slate-400">Loading Booking Wizard...</div>}>

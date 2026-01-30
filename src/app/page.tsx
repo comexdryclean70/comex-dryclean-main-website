@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import Image from "next/image";
 import Hero from "@/components/Hero";
+import Logo from "@/components/Logo";
 import TrustStrip from "@/components/TrustStrip";
 import MastersTouch from "@/components/MastersTouch";
 import ProcessSteps from "@/components/ProcessSteps";
@@ -16,14 +17,8 @@ export default function Home() {
     <main className="min-h-screen pb-20 md:pb-0 font-sans text-slate-800 selection:bg-orange-100 selection:text-orange-900">
       {/* Header */}
       <nav className="absolute top-0 left-0 w-full p-6 z-30 flex justify-between items-center max-w-7xl mx-auto left-0 right-0">
-        <div className="w-44 md:w-56 relative h-16 md:h-20">
-          <Image
-            src="/logo-transparent.png"
-            alt="Comex Drycleaners"
-            fill
-            className="object-contain object-left"
-            priority
-          />
+        <div className="w-44 md:w-56 relative">
+          <Logo variant="dark" />
         </div>
         <div className="hidden md:flex items-center gap-6">
           <a href="/pricing" className="text-slate-600 font-bold hover:text-blue-600 transition-colors">Pricing</a>

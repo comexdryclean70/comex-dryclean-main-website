@@ -1,19 +1,21 @@
 import { MapPin, Phone, Mail, Instagram, Facebook, Clock } from "lucide-react";
+import Logo from "@/components/Logo";
 import Image from "next/image";
 
 export default function MainFooter() {
     return (
-        <footer className="bg-blue-950 border-t border-white/5 relative">
+        <footer className="bg-slate-900 border-t border-white/10 relative">
+            {/* Visual Divider Line */}
+            <hr className="border-white/5 w-full absolute top-0" />
+
             <div className="absolute inset-0 bg-black/20 pointer-events-none"></div>
             <div className="relative z-10 pt-16 pb-24 md:pb-8 px-6 text-white">
-                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12 border-b border-blue-900/50 pb-12">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12 border-b border-white/10 pb-12">
 
                     {/* Column 1: About */}
                     <div>
-                        <div className="mb-6">
-                            <div className="relative w-40 h-12">
-                                <Image src="/logo-transparent.png" alt="Comex" fill className="object-contain object-left" />
-                            </div>
+                        <div className="mb-8">
+                            <Logo variant="dark" />
                         </div>
                         <p className="text-blue-200/80 leading-relaxed mb-6 max-w-sm">
                             Providing premium dry cleaning and laundry services in Dwarka and Palam since 2010. We use eco-friendly chemicals and state-of-the-art machinery to give your clothes the care they deserve.

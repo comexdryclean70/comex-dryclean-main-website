@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Phone, Sparkles, Star } from "lucide-react";
+import { ArrowRight, Phone, Clock, Star } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Hero() {
@@ -24,9 +24,9 @@ export default function Hero() {
                         className="space-y-6 text-center lg:text-left order-2 lg:order-1"
                     >
                         {/* Badge */}
-                        <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 px-4 py-2 rounded-full">
-                            <Sparkles className="w-4 h-4 text-orange-500" />
-                            <span className="text-sm font-bold text-blue-900 uppercase tracking-wider">Premium Garment Care</span>
+                        <div className="inline-flex items-center gap-2 bg-slate-100 border border-slate-200 px-4 py-2 rounded-full">
+                            <div className="w-2 h-2 rounded-full bg-green-500" />
+                            <span className="text-sm font-medium text-slate-700">Dwarka, since 1994</span>
                         </div>
 
                         {/* Headline */}
@@ -50,7 +50,7 @@ export default function Hero() {
                                 <span className="font-semibold text-slate-700">German Eco-Solvents</span>
                             </div>
                             <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm border border-slate-100">
-                                <span className="text-lg">⏱️</span>
+                                <Clock className="w-4 h-4 text-slate-500" />
                                 <span className="font-semibold text-slate-700">24hr Turnaround</span>
                             </div>
                         </div>

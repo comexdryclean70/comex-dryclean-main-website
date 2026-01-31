@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, X, Sparkles } from "lucide-react";
+import { Check, X } from "lucide-react";
 import { motion } from "framer-motion";
 
 const COMPARISON_POINTS = [
@@ -56,10 +56,6 @@ export default function ComparisonSection() {
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200/50 px-4 py-2 rounded-full mb-6">
-                        <Sparkles className="w-4 h-4 text-amber-600" />
-                        <span className="text-sm font-bold text-amber-800">The Comex Difference</span>
-                    </div>
 
                     <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-3 tracking-tight">
                         Why We Still Do It the Old Way
@@ -202,7 +198,7 @@ export default function ComparisonSection() {
                         <p className="text-lg md:text-xl font-medium leading-relaxed">
                             <span className="text-slate-400">If it's replaceable, any cleaner will do.</span>
                             <br />
-                            <span className="text-white font-bold">If it isn't — that's where we come in.</span>
+                            <span className="text-white font-bold">If it isn't, that's where we come in.</span>
                         </p>
                     </div>
                 </motion.div>

@@ -18,7 +18,7 @@ export default function Home() {
     <main className="min-h-screen pb-20 md:pb-0 font-sans text-[#003366] bg-white selection:bg-red-100 selection:text-[#D32F2F]">
       {/* Header - White & Clean */}
       <nav className="absolute top-0 left-0 w-full p-6 md:p-8 z-30 flex justify-between items-center max-w-7xl mx-auto left-0 right-0">
-        <div className="relative">
+        <div className="relative md:-ml-6 md:-mt-4">
           <Logo variant="brand" className="w-64 h-20 md:w-80 md:h-28" />
         </div>
         <div className="hidden md:flex items-center gap-8 bg-white/50 backdrop-blur-sm pl-6 pr-2 py-2 rounded-full border border-slate-100/50">

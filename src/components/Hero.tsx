@@ -49,8 +49,8 @@ export default function Hero() {
                         </p>
                     </div>
 
-                    {/* CTAs - Prominent & Accessible */}
-                    <div className="flex flex-col sm:flex-row gap-4 pt-6 w-full sm:w-auto">
+                    {/* CTAs - Prominent & Accessible (Hidden on mobile, StickyFooter handles mobile CTA) */}
+                    <div className="hidden sm:flex flex-col sm:flex-row gap-4 pt-6 w-full sm:w-auto">
                         <Link href="/booking" className="group relative overflow-hidden bg-[#D32F2F] text-white text-lg font-bold rounded-full px-12 py-5 shadow-2xl shadow-red-900/20 transition-all hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto text-center flex items-center justify-center gap-3">
                             <span className="relative z-10 flex items-center gap-2">
                                 Book Pickup <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

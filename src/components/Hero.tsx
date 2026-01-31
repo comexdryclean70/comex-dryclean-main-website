@@ -2,103 +2,117 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle, Star, Phone, Sparkles } from "lucide-react";
+import { ArrowRight, Phone, Sparkles, Star } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Hero() {
     return (
-        <section className="relative w-full min-h-[90vh] flex items-center bg-white overflow-hidden pt-32 md:pt-0">
+        <section className="relative w-full bg-gradient-to-b from-white to-slate-50 overflow-hidden">
 
-            {/* Background Texture - Subtle Grain/Paper feel suitable for editorial */}
-            <div className="absolute inset-0 bg-[#fffdfa] z-0">
-                <div className="absolute inset-0 opacity-[0.4] bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] mix-blend-multiply" />
-            </div>
+            {/* Background Pattern */}
+            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] opacity-30" />
 
-            <div className="w-full max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10 h-full">
+            {/* Hero Content */}
+            <div className="relative z-10 w-full max-w-7xl mx-auto px-5 pt-24 pb-8 md:pt-32 md:pb-20">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
-                {/* Text Content - Spans 7 cols on Desktop */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="col-span-1 lg:col-span-7 space-y-8 order-1 relative z-20 pt-8 lg:pt-0"
-                >
-                    {/* Badge - Minimalist Capsule */}
-                    <div className="inline-flex items-center gap-2 bg-blue-50/50 border border-blue-100/50 px-4 py-1.5 rounded-full text-[#003366] text-xs font-bold tracking-widest uppercase mt-8 md:mt-12">
-                        <Sparkles className="w-3 h-3 text-[#D32F2F]" />
-                        <span>Premium Garment Care</span>
-                    </div>
+                    {/* Text Content */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
+                        className="space-y-6 text-center lg:text-left order-2 lg:order-1"
+                    >
+                        {/* Badge */}
+                        <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 px-4 py-2 rounded-full">
+                            <Sparkles className="w-4 h-4 text-orange-500" />
+                            <span className="text-sm font-bold text-blue-900 uppercase tracking-wider">Premium Garment Care</span>
+                        </div>
 
-                    {/* Headline - "Magazine Cover" style */}
-                    <h1 className="text-5xl md:text-7xl lg:text-[6.5rem] font-sans font-black text-[#003366] leading-[0.9] tracking-tighter">
-                        Freshness <br />
-                        <span className="relative inline-block">
-                            You Can Feel.
-                            {/* Accent Underline */}
-                            <svg className="absolute -bottom-2 md:-bottom-4 left-0 w-full h-3 md:h-6 text-[#D32F2F] -z-10 opacity-20" viewBox="0 0 100 10" preserveAspectRatio="none">
-                                <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="none" />
-                            </svg>
-                        </span>
-                    </h1>
-
-                    {/* Subhead - Editorial Layout */}
-                    <div className="flex flex-col md:flex-row gap-6 items-start md:items-center pt-2">
-                        <div className="w-12 h-[1px] bg-[#D32F2F] hidden md:block mt-3" />
-                        <p className="text-lg md:text-2xl text-slate-600 max-w-lg leading-relaxed font-serif italic">
-                            "We don't just clean clothes. We restore the feeling of new. A Dwarka favorite for 30 years."
-                        </p>
-                    </div>
-
-                    {/* CTAs - Prominent & Accessible (Hidden on mobile, StickyFooter handles mobile CTA) */}
-                    <div className="hidden sm:flex flex-col sm:flex-row gap-4 pt-6 w-full sm:w-auto">
-                        <Link href="/booking" className="group relative overflow-hidden bg-[#D32F2F] text-white text-lg font-bold rounded-full px-12 py-5 shadow-2xl shadow-red-900/20 transition-all hover:scale-[1.02] active:scale-[0.98] w-full sm:w-auto text-center flex items-center justify-center gap-3">
-                            <span className="relative z-10 flex items-center gap-2">
-                                Book Pickup <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                        {/* Headline */}
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-slate-900 leading-[0.95] tracking-tight">
+                            Freshness{' '}
+                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-800">
+                                You Can Feel.
                             </span>
-                            {/* Button Shine Effect */}
-                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 -translate-x-full group-hover:animate-shine" />
-                        </Link>
+                        </h1>
 
-                        <a href="tel:9250885310" className="group bg-transparent text-[#003366] border border-blue-900/10 hover:border-blue-900/30 text-lg font-bold rounded-full px-8 py-5 transition-all w-full sm:w-auto text-center flex items-center justify-center gap-3 hover:bg-blue-50/50">
-                            <Phone className="w-5 h-5 fill-current" /> 9250-885-310
-                        </a>
-                    </div>
+                        {/* Subhead */}
+                        <p className="text-base sm:text-lg text-slate-600 max-w-md mx-auto lg:mx-0 leading-relaxed">
+                            We don't just clean clothes. We restore the feeling of new.
+                            <span className="font-semibold text-slate-800"> A Dwarka favorite for 30+ years.</span>
+                        </p>
 
-                    {/* Trust Footnote */}
-                    <div className="pt-8 flex gap-6 text-xs font-bold text-slate-400 uppercase tracking-widest">
-                        <span>• German Eco-Solvents</span>
-                        <span>• 24hr Turnaround</span>
-                    </div>
+                        {/* Trust Badges */}
+                        <div className="flex flex-wrap justify-center lg:justify-start gap-4 text-sm">
+                            <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm border border-slate-100">
+                                <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
+                                <span className="font-semibold text-slate-700">German Eco-Solvents</span>
+                            </div>
+                            <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm border border-slate-100">
+                                <span className="text-lg">⏱️</span>
+                                <span className="font-semibold text-slate-700">24hr Turnaround</span>
+                            </div>
+                        </div>
 
-                </motion.div>
+                        {/* CTA Buttons - Desktop Only */}
+                        <div className="hidden md:flex flex-col sm:flex-row gap-4 pt-4">
+                            <Link
+                                href="/booking"
+                                className="group relative overflow-hidden bg-gradient-to-r from-orange-500 to-orange-600 text-white text-lg font-bold rounded-2xl px-8 py-4 shadow-xl shadow-orange-500/25 hover:shadow-2xl hover:shadow-orange-500/30 transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2"
+                            >
+                                Book Pickup
+                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            </Link>
 
-                {/* Editorial Image - Blended & Organic (No Box) */}
-                {/* On Mobile: It sits below text as a background element. On Desktop: It takes the right side. */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 1.5 }}
-                    className="absolute top-0 right-0 w-full h-[50vh] lg:static lg:col-span-5 lg:h-[85vh] lg:w-full order-2 -z-10 lg:z-10"
-                >
-                    {/* The Gradient Mask - The Key to "Blending" */}
-                    <div className="relative w-full h-full">
-                        {/* Mobile Fade Mask */}
-                        <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-white to-transparent z-20 lg:hidden" />
+                            <a
+                                href="tel:9250885310"
+                                className="bg-white text-slate-800 border-2 border-slate-200 hover:border-slate-300 text-lg font-bold rounded-2xl px-8 py-4 transition-all flex items-center justify-center gap-2 hover:bg-slate-50"
+                            >
+                                <Phone className="w-5 h-5" />
+                                Call Us
+                            </a>
+                        </div>
+                    </motion.div>
 
-                        {/* Desktop Side Mask */}
-                        <div className="absolute inset-y-0 left-0 w-64 bg-gradient-to-r from-white via-white/80 to-transparent z-20 hidden lg:block" />
+                    {/* Hero Image */}
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        className="relative order-1 lg:order-2"
+                    >
+                        <div className="relative aspect-[4/3] lg:aspect-square rounded-3xl overflow-hidden shadow-2xl shadow-slate-900/10">
+                            {/* Gradient Overlay */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent z-10" />
 
-                        <Image
-                            src="/hero-fresh.png"
-                            alt="Fresh laundry blowing in the wind"
-                            fill
-                            className="object-cover object-center lg:object-left opacity-40 lg:opacity-100"
-                            priority
-                            sizes="(max-width: 768px) 100vw, 50vw"
-                        />
-                    </div>
-                </motion.div>
+                            <Image
+                                src="/hero-fresh.png"
+                                alt="Fresh laundry blowing in the wind"
+                                fill
+                                className="object-cover"
+                                priority
+                                sizes="(max-width: 768px) 100vw, 50vw"
+                            />
 
+                            {/* Floating Badge */}
+                            <div className="absolute bottom-4 left-4 right-4 z-20 bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-lg">
+                                <div className="flex items-center justify-between">
+                                    <div>
+                                        <p className="text-xs text-slate-500 font-medium uppercase tracking-wider">Trusted by</p>
+                                        <p className="text-lg font-bold text-slate-900">5000+ Families</p>
+                                    </div>
+                                    <div className="flex -space-x-2">
+                                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 border-2 border-white flex items-center justify-center text-white text-xs font-bold">R</div>
+                                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 border-2 border-white flex items-center justify-center text-white text-xs font-bold">S</div>
+                                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-400 to-green-600 border-2 border-white flex items-center justify-center text-white text-xs font-bold">A</div>
+                                        <div className="w-10 h-10 rounded-full bg-slate-200 border-2 border-white flex items-center justify-center text-slate-600 text-xs font-bold">+</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </motion.div>
+                </div>
             </div>
         </section>
     );

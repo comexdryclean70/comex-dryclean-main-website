@@ -30,7 +30,7 @@ export default function Hero() {
                         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.1] tracking-tight">
                             <span className="font-serif italic text-slate-800">Premium Care,</span>
                             <br />
-                            <span className="font-bold text-slate-900">Guaranteed Fresh.</span>
+                            <span className="font-bold text-red-600">Guaranteed Fresh.</span>
                         </h1>
 
                         {/* Subhead */}

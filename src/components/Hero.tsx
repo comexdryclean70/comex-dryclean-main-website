@@ -38,10 +38,11 @@ export default function Hero() {
                         </h1>
 
                         {/* Subhead */}
-                        <p className="text-base sm:text-lg text-slate-600 max-w-md mx-auto lg:mx-0 leading-relaxed">
-                            We don't just clean clothes. We restore the feeling of new.
-                            <span className="font-semibold text-slate-800"> A Dwarka favorite for 30+ years.</span>
-                        </p>
+                        <div className="text-base sm:text-lg text-slate-600 max-w-md mx-auto lg:mx-0 leading-relaxed space-y-1">
+                            <p className="font-medium text-slate-800">Not just cleaned.</p>
+                            <p className="font-medium text-slate-800">Properly cared for.</p>
+                            <p className="text-slate-500 mt-2">Trusted dry cleaners for 30+ years.</p>
+                        </div>
 
                         {/* Trust Badges */}
                         <div className="flex flex-wrap justify-center lg:justify-start gap-4 text-sm">

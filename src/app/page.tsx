@@ -34,28 +34,23 @@ export default function Home() {
 
       {/* Sections - Light & Airy Backgrounds */}
       <div className="bg-slate-50">
-        <TrustStrip />
-      </div>
+        <div className="bg-slate-50">
+          <ComparisonSection />
+        </div>
 
-      <StorySection />
+        <MastersTouch />
 
-      <div className="bg-slate-50">
-        <ComparisonSection />
-      </div>
+        <div className="bg-slate-50">
+          <ProcessSteps />
+        </div>
 
-      <MastersTouch />
+        <PriceCards />
 
-      <div className="bg-slate-50">
-        <ProcessSteps />
-      </div>
+        <TrustGallery />
 
-      <PriceCards />
-
-      <TrustGallery />
-
-      <CallToAction />
-      <MainFooter />
-      <StickyFooter />
+        <CallToAction />
+        <MainFooter />
+        <StickyFooter />
     </main>
   );
 }

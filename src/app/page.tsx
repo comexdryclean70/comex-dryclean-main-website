@@ -32,6 +32,11 @@ export default function Home() {
       {/* Brand Energy Hero */}
       <Hero />
 
+      {/* How It Works - Right below hero */}
+      <div className="bg-slate-50">
+        <ProcessSteps />
+      </div>
+
       {/* Sections - Light & Airy Backgrounds */}
       <div className="bg-slate-50">
         <TrustStrip />
@@ -42,10 +47,6 @@ export default function Home() {
       </div>
 
       <MastersTouch />
-
-      <div className="bg-slate-50">
-        <ProcessSteps />
-      </div>
 
       <PriceCards />
 

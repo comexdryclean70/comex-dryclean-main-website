@@ -95,6 +95,25 @@ export default function PricingPage() {
                         <p className="text-lg text-slate-500 max-w-xl mx-auto">
                             Select your garments and get an instant estimate. No hidden fees, ever.
                         </p>
+
+                        {/* Pricing Disclaimer */}
+                        <div className="mt-8 max-w-2xl mx-auto">
+                            <div className="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200/50 rounded-2xl p-5 text-left">
+                                <div className="flex items-start gap-4">
+                                    <div className="w-10 h-10 bg-amber-100 rounded-xl flex items-center justify-center shrink-0">
+                                        <Info className="w-5 h-5 text-amber-600" />
+                                    </div>
+                                    <div>
+                                        <h3 className="font-bold text-amber-900 mb-1">Pricing Note</h3>
+                                        <p className="text-sm text-amber-800 leading-relaxed">
+                                            Final pricing depends on fabric quality and garment condition assessed during pickup.
+                                            For example, a <strong>Lehenga</strong> starts at ₹350 for cotton and can go up to ₹2000+ for
+                                            <strong> Silk, Zari work, Heavy embroidery, Velvet,</strong> or <strong>Designer pieces</strong>.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </motion.div>
                 </div>
             </div>
@@ -114,8 +133,8 @@ export default function PricingPage() {
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ delay: idx * 0.05 }}
                                     className={`relative px-6 py-3 rounded-xl text-sm font-bold whitespace-nowrap transition-all ${activeTab === category
-                                            ? 'bg-slate-900 text-white shadow-lg shadow-slate-900/20'
-                                            : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                                        ? 'bg-slate-900 text-white shadow-lg shadow-slate-900/20'
+                                        : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
                                         }`}
                                 >
                                     {category}
@@ -143,27 +162,22 @@ export default function PricingPage() {
                                         exit={{ opacity: 0, scale: 0.95 }}
                                         transition={{ delay: idx * 0.03 }}
                                         className={`group relative bg-white p-5 rounded-2xl border-2 transition-all duration-300 ${isInCart
-                                                ? 'border-blue-500 shadow-xl shadow-blue-500/10 scale-[1.02]'
-                                                : 'border-transparent shadow-lg shadow-slate-900/5 hover:shadow-xl hover:border-slate-200'
+                                            ? 'border-blue-500 shadow-xl shadow-blue-500/10 scale-[1.02]'
+                                            : 'border-transparent shadow-lg shadow-slate-900/5 hover:shadow-xl hover:border-slate-200'
                                             }`}
                                     >
                                         <div className="flex items-center justify-between gap-4">
                                             {/* Left: Icon + Info */}
                                             <div className="flex items-center gap-4 flex-1 min-w-0">
                                                 <div className={`shrink-0 p-4 rounded-2xl transition-all duration-300 ${isInCart
-                                                        ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/30'
-                                                        : 'bg-slate-100 text-slate-500 group-hover:bg-blue-50 group-hover:text-blue-600'
+                                                    ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/30'
+                                                    : 'bg-slate-100 text-slate-500 group-hover:bg-blue-50 group-hover:text-blue-600'
                                                     }`}>
                                                     <item.icon className="w-6 h-6" />
                                                 </div>
                                                 <div className="min-w-0">
                                                     <h3 className="font-bold text-slate-900 text-lg flex items-center gap-2 flex-wrap">
                                                         <span className="truncate">{item.name}</span>
-                                                        {isVariable && (
-                                                            <span className="shrink-0 text-[10px] bg-amber-100 text-amber-700 px-2 py-1 rounded-md font-bold uppercase tracking-wide">
-                                                                Varies
-                                                            </span>
-                                                        )}
                                                     </h3>
                                                     <p className={`text-lg font-bold mt-1 transition-colors ${isInCart ? 'text-blue-600' : 'text-slate-900'
                                                         }`}>
@@ -174,15 +188,15 @@ export default function PricingPage() {
 
                                             {/* Right: Quantity Controls */}
                                             <div className={`shrink-0 flex items-center gap-1 p-1.5 rounded-xl transition-all ${isInCart
-                                                    ? 'bg-blue-50 border-2 border-blue-200'
-                                                    : 'bg-slate-100 border-2 border-transparent'
+                                                ? 'bg-blue-50 border-2 border-blue-200'
+                                                : 'bg-slate-100 border-2 border-transparent'
                                                 }`}>
                                                 <button
                                                     onClick={() => updateQuantity(item.id, -1)}
                                                     disabled={!isInCart}
                                                     className={`w-10 h-10 flex items-center justify-center rounded-lg transition-all ${!isInCart
-                                                            ? 'text-slate-300 cursor-not-allowed'
-                                                            : 'text-slate-700 hover:bg-white active:scale-90 shadow-sm'
+                                                        ? 'text-slate-300 cursor-not-allowed'
+                                                        : 'text-slate-700 hover:bg-white active:scale-90 shadow-sm'
                                                         }`}
                                                 >
                                                     <Minus className="w-4 h-4" strokeWidth={2.5} />

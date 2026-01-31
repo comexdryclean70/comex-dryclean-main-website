@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
     return (
-        <section className="relative w-full min-h-[95vh] flex items-center bg-white overflow-hidden pt-24 md:pt-0">
+        <section className="relative w-full min-h-[95vh] flex items-center bg-white overflow-hidden pt-36 md:pt-48">
 
             {/* Background Pattern - Dot Grid for Texture */}
             <div className="absolute inset-0 bg-[radial-gradient(#e2e8f0_1px,transparent_1px)] [background-size:24px_24px] opacity-60 z-0" />

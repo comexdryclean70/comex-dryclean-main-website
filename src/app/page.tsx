@@ -23,7 +23,7 @@ export default function Home() {
         </div>
         <div className="hidden md:flex items-center gap-8 bg-white/50 backdrop-blur-sm pl-6 pr-2 py-2 rounded-full border border-slate-100/50">
           <a href="/pricing" className="text-sm font-extrabold text-[#003366]/70 hover:text-[#003366] uppercase tracking-wider transition-colors">Pricing</a>
-          <a href="/booking" className="text-sm font-extrabold text-[#003366]/70 hover:text-[#003366] uppercase tracking-wider transition-colors mr-2">Services</a>
+          <a href="/services" target="_blank" className="text-sm font-extrabold text-[#003366]/70 hover:text-[#003366] uppercase tracking-wider transition-colors mr-2">Services</a>
           <a href="tel:9250885310" className="text-sm font-bold bg-[#003366] text-white px-6 py-3 rounded-full shadow-lg shadow-blue-900/10 hover:shadow-blue-900/20 hover:bg-[#002244] transition-all transform hover:-translate-y-0.5">
             Call Us
           </a>

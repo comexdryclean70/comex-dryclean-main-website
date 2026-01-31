@@ -30,9 +30,11 @@ export default function Hero() {
                         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.1] tracking-tight">
                             <span className="font-serif italic text-slate-800">Premium Care,</span>
                             <br />
-                            <span className="relative inline-block">
+                            <span className="relative inline-block px-2">
                                 <span className="font-bold text-red-600 relative z-10">Guaranteed Fresh.</span>
-                                <svg className="absolute -bottom-2 left-0 w-full h-3 text-red-300 -z-10" viewBox="0 0 200 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.00025 6.99997C25.7501 2.99999 124.814 3.00003 166.085 4.30561C190.158 5.06716 195.034 5.25732 198.001 5.49997" stroke="currentColor" strokeWidth="3" strokeLinecap="round" /></svg>
+                                <svg className="absolute bottom-1 left-0 w-full h-4 text-red-200 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none">
+                                    <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="12" className="opacity-50" />
+                                </svg>
                             </span>
                         </h1>
 

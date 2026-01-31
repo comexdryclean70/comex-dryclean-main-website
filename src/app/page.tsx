@@ -39,20 +39,21 @@ export default function Home() {
 
       <div className="bg-slate-50">
         <ComparisonSection />
+      </div>
 
-        <MastersTouch />
+      <MastersTouch />
 
-        <div className="bg-slate-50">
-          <ProcessSteps />
-        </div>
+      <div className="bg-slate-50">
+        <ProcessSteps />
+      </div>
 
-        <PriceCards />
+      <PriceCards />
 
-        <TrustGallery />
+      <TrustGallery />
 
-        <CallToAction />
-        <MainFooter />
-        <StickyFooter />
+      <CallToAction />
+      <MainFooter />
+      <StickyFooter />
     </main>
   );
 }

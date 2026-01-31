@@ -59,11 +59,9 @@ export default function MastersTouch() {
                         {/* Headline */}
                         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#003366] mb-6 leading-tight tracking-tight">
                             Because Some Things{' '}
-                            <span className="relative inline-block text-red-600 font-serif italic px-2">
+                            <span className="relative inline-block text-red-600 font-serif italic">
                                 <span className="relative z-10">Shouldn't Be Automated</span>
-                                <svg className="absolute bottom-2 left-0 w-full h-4 text-red-200 -z-10 transform -rotate-1" viewBox="0 0 100 10" preserveAspectRatio="none">
-                                    <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="12" className="opacity-50" />
-                                </svg>
+                                <svg className="absolute -bottom-2 left-0 w-full h-3 text-red-300 -z-10 transform -rotate-1" viewBox="0 0 200 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.00025 6.99997C25.7501 2.99999 124.814 3.00003 166.085 4.30561C190.158 5.06716 195.034 5.25732 198.001 5.49997" stroke="currentColor" strokeWidth="3" strokeLinecap="round" /></svg>
                             </span>
                         </h2>
 

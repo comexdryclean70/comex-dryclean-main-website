@@ -1,29 +1,24 @@
 import React from "react";
-import { Caveat } from "next/font/google"; // Using Caveat as a proxy for the script font if needed, but we'll use SVG paths for better control or just standard text with a class if the font is loaded globally. 
-// Actually, let's keep it simple and use an SVG that approximates the look or standard text if we can't load fonts dynamically here easily.
-// I'll use standard SVG text elements with system cursive fallback for now to ensure it renders immediately without complex font loading in this component file.
+import Image from "next/image";
 
 export const Logo = ({ variant = "brand", className = "" }: { variant?: "brand" | "light" | "dark", className?: string }) => {
+    // Determine dimensions based on className or default
+    // We'll use object-contain to make sure it fits within the parent's constraints
 
-    // Brand Colors
-    const red = "#D32F2F"; // Spark Red
-    const blue = "#003366"; // Deep Navy
-
-    const isLight = variant === "light";
-    const textColor = isLight ? "white" : blue;
-    const accentColor = isLight ? "white" : red;
+    // For "light" variant usage (on dark backgrounds), we might technically need a white version of the logo.
+    // However, the provided logo is Red/Blue. 
+    // If exact color manipulation is needed later we can use CSS filters or require a white asset.
+    // For now, we assume the Red/Blue logo is desired everywhere as per the "Brand Energy" overhaul.
 
     return (
-        <div className={`flex flex-col items-center leading-none select-none ${className}`}>
-            {/* Comex - Red Script Style */}
-            <div className="text-[2.5rem] md:text-[3rem] font-bold italic tracking-tighter" style={{ fontFamily: '"Brush Script MT", "Caveat", cursive', color: accentColor }}>
-                Comex
-            </div>
-
-            {/* DRY CLEANER - Blue Sans Style */}
-            <div className="text-[0.6rem] md:text-[0.75rem] font-black tracking-[0.2em] uppercase mt-[-0.2em]" style={{ fontFamily: 'Inter, sans-serif', color: textColor }}>
-                Dry Cleaner
-            </div>
+        <div className={`relative ${className} min-w-[120px] min-h-[40px]`}>
+            <Image
+                src="/comex-logo.png"
+                alt="Comex Dry Cleaner"
+                fill
+                className="object-contain object-left"
+                priority
+            />
         </div>
     );
 };

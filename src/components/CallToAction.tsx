@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function CallToAction() {
     return (
-        <section className="relative py-20 px-6 bg-blue-950 overflow-hidden">
+        <section className="relative py-12 px-6 bg-blue-950 overflow-hidden">
             {/* Background Illustration - Subtle Line Art */}
             <div className="absolute inset-0 opacity-10 pointer-events-none">
                 <svg className="absolute right-[-10%] top-[-10%] w-[600px] h-[600px] stroke-white fill-none" viewBox="0 0 200 200" strokeWidth="0.5">

@@ -34,7 +34,7 @@ export default function ProcessSteps() {
     ];
 
     return (
-        <section className="py-24 px-6 bg-slate-50 relative overflow-hidden">
+        <section className="py-14 px-6 bg-slate-50 relative overflow-hidden">
             {/* Background decoration */}
             <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
                 <div className="absolute top-10 left-10 w-64 h-64 bg-blue-300 rounded-full blur-3xl"></div>

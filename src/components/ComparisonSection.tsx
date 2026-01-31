@@ -44,7 +44,7 @@ const COMPARISON_POINTS = [
 
 export default function ComparisonSection() {
     return (
-        <section className="py-12 md:py-16 px-4 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
+        <section className="py-12 md:py-16 px-4 bg-[#FDF8F3] relative overflow-hidden">
             {/* Decorative Elements */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gradient-radial from-blue-100/40 to-transparent rounded-full blur-3xl -z-10" />
 

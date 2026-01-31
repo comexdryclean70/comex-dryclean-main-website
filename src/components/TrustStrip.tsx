@@ -9,7 +9,7 @@ export default function TrustStrip() {
     ];
 
     return (
-        <section className="py-8 bg-white border-b border-slate-100 shadow-sm relative z-20">
+        <section className="py-8 bg-[#FDF8F3] border-b border-slate-100 shadow-sm relative z-20">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {badges.map((badge, idx) => (

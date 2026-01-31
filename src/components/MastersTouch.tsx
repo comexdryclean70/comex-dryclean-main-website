@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function MastersTouch() {
     return (
-        <section className="py-10 md:py-14 bg-gradient-to-b from-white to-slate-50 overflow-hidden">
+        <section className="py-10 md:py-14 bg-[#FDF8F3] overflow-hidden">
             <div className="max-w-7xl mx-auto px-5">
 
                 {/* Mobile: Image First, Then Content */}

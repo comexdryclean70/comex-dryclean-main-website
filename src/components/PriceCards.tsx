@@ -38,7 +38,7 @@ export default function PriceCards() {
     const [activeTab, setActiveTab] = useState("Men's Formal");
 
     return (
-        <section className="py-12 px-6 relative overflow-hidden bg-slate-50">
+        <section className="py-12 px-6 relative overflow-hidden bg-[#FDF8F3]">
             {/* Dot Pattern Overlay */}
             <div className="absolute inset-0 z-0 opacity-[0.4]" style={{ backgroundImage: "radial-gradient(#cbd5e1 1px, transparent 1px)", backgroundSize: "32px 32px" }}></div>
             <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-transparent to-white/80 z-0"></div>

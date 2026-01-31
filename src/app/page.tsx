@@ -14,7 +14,7 @@ import TrustStrip from "@/components/TrustStrip";
 
 export default function Home() {
   return (
-    <main className="min-h-screen pb-20 md:pb-0 font-sans text-[#003366] bg-white selection:bg-red-100 selection:text-[#D32F2F]">
+    <main className="min-h-screen pb-20 md:pb-0 font-sans text-[#003366] bg-[#FDF8F3] selection:bg-red-100 selection:text-[#D32F2F]">
       {/* Header - White & Clean */}
       <nav className="absolute top-0 left-0 w-full p-6 md:p-8 z-30 flex justify-between items-center max-w-7xl mx-auto left-0 right-0">
         <div className="relative md:-ml-6 md:-mt-4">
@@ -33,20 +33,14 @@ export default function Home() {
       <Hero />
 
       {/* How It Works - Right below hero */}
-      <div className="bg-slate-50">
-        <ProcessSteps />
-      </div>
+      <ProcessSteps />
 
       {/* Sections - Light & Airy Backgrounds */}
-      <div className="bg-slate-50">
-        <TrustStrip />
-      </div>
+      <TrustStrip />
 
       <MastersTouch />
 
-      <div className="bg-slate-50">
-        <ComparisonSection />
-      </div>
+      <ComparisonSection />
 
       <PriceCards />
 

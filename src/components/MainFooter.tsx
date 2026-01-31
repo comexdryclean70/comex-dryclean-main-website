@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function MainFooter() {
     return (
-        <footer className="bg-slate-900 border-t border-white/10 relative">
+        <footer className="bg-[#005c44] border-t border-white/10 relative">
             {/* Visual Divider Line */}
             <hr className="border-white/5 w-full absolute top-0" />
 
@@ -17,7 +17,7 @@ export default function MainFooter() {
                         <div className="mb-8">
                             <Logo variant="dark" />
                         </div>
-                        <p className="text-blue-200/80 leading-relaxed mb-6 max-w-sm">
+                        <p className="text-emerald-50/80 leading-relaxed mb-6 max-w-sm">
                             Providing premium dry cleaning and laundry services in Dwarka and Palam since 2010. We use eco-friendly chemicals and state-of-the-art machinery to give your clothes the care they deserve.
                         </p>
                         <div className="flex gap-4">
@@ -33,7 +33,7 @@ export default function MainFooter() {
                     {/* Column 2: Services */}
                     <div>
                         <h3 className="text-lg font-bold mb-6 text-orange-400 uppercase tracking-widest text-xs">Our Services</h3>
-                        <ul className="space-y-4 text-sm text-blue-100/70">
+                        <ul className="space-y-4 text-sm text-emerald-50/70">
                             <li className="flex items-center gap-2">
                                 <span className="w-1.5 h-1.5 rounded-full bg-orange-500"></span> Dry Cleaning (Men & Women)
                             </li>
@@ -60,7 +60,7 @@ export default function MainFooter() {
                                 <MapPin className="w-6 h-6 text-orange-500 shrink-0" />
                                 <div>
                                     <p className="font-semibold text-white">Main Outlet</p>
-                                    <p className="text-sm text-blue-200/70 mt-1">
+                                    <p className="text-sm text-emerald-50/70 mt-1">
                                         Shop No. G-5, Ground Floor, Vardhman Plaza, Sec-6, Dwarka.
                                     </p>
                                 </div>
@@ -70,8 +70,8 @@ export default function MainFooter() {
                                 <Phone className="w-6 h-6 text-orange-500 shrink-0" />
                                 <div>
                                     <p className="font-semibold text-white">Call Us</p>
-                                    <a href="tel:9250885310" className="block text-sm text-blue-200/70 hover:text-white mt-1">9250-885-310</a>
-                                    <a href="tel:9818590800" className="block text-sm text-blue-200/70 hover:text-white">9818-590-800</a>
+                                    <a href="tel:9250885310" className="block text-sm text-emerald-50/70 hover:text-white mt-1">9250-885-310</a>
+                                    <a href="tel:9818590800" className="block text-sm text-emerald-50/70 hover:text-white">9818-590-800</a>
                                 </div>
                             </div>
 
@@ -79,7 +79,7 @@ export default function MainFooter() {
                                 <Clock className="w-6 h-6 text-orange-500 shrink-0" />
                                 <div>
                                     <p className="font-semibold text-white">Working Hours</p>
-                                    <p className="text-sm text-blue-200/70 mt-1">Mon - Sun: 10:00 AM - 9:00 PM</p>
+                                    <p className="text-sm text-emerald-50/70 mt-1">Mon - Sun: 10:00 AM - 9:00 PM</p>
                                     <p className="text-xs text-green-400 mt-1">Open 7 Days a Week</p>
                                 </div>
                             </div>
@@ -87,7 +87,7 @@ export default function MainFooter() {
                     </div>
                 </div>
 
-                <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs text-blue-400/50">
+                <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs text-emerald-50/50">
                     <p>&copy; {new Date().getFullYear()} Comex Drycleaners. All rights reserved.</p>
                     <div className="flex gap-6 mt-4 md:mt-0">
                         <a href="#" className="hover:text-white">Privacy Policy</a>

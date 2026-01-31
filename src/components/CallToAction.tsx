@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function CallToAction() {
     return (
-        <section className="relative py-12 px-6 bg-blue-950 overflow-hidden">
+        <section className="relative py-12 px-6 bg-[#006A4E] overflow-hidden">
             {/* Background Illustration - Subtle Line Art */}
             <div className="absolute inset-0 opacity-10 pointer-events-none">
                 <svg className="absolute right-[-10%] top-[-10%] w-[600px] h-[600px] stroke-white fill-none" viewBox="0 0 200 200" strokeWidth="0.5">
@@ -30,7 +30,7 @@ export default function CallToAction() {
                     <h2 className="text-4xl md:text-5xl font-bold text-white font-serif mb-6 leading-tight">
                         Ready to Restore Your Wardrobe?
                     </h2>
-                    <p className="text-blue-100 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
+                    <p className="text-emerald-50 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
                         Experience the difference of premium dry cleaning. Free pickup and delivery in Dwarka & Palam.
                     </p>
 

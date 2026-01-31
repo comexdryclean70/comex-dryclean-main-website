@@ -88,8 +88,11 @@ export default function PricingPage() {
                         </div>
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight">
                             Premium Care,{' '}
-                            <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                                Fair Prices
+                            <span className="relative inline-block">
+                                <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent relative z-10">
+                                    Fair Prices
+                                </span>
+                                <svg className="absolute -bottom-2 left-0 w-full h-3 text-blue-200 -z-10" viewBox="0 0 200 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.00025 6.99997C25.7501 2.99999 124.814 3.00003 166.085 4.30561C190.158 5.06716 195.034 5.25732 198.001 5.49997" stroke="currentColor" strokeWidth="3" strokeLinecap="round" /></svg>
                             </span>
                         </h1>
                         <p className="text-lg text-slate-500 max-w-xl mx-auto">

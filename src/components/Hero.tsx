@@ -2,115 +2,124 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Phone, Clock, Star } from "lucide-react";
+import { Play } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Hero() {
     return (
-        <section className="relative w-full bg-gradient-to-b from-white to-slate-50 overflow-hidden">
-
-            {/* Background Pattern */}
-            <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cream-paper.png')] opacity-30" />
+        <section className="relative w-full bg-[#FDF8F3] overflow-hidden min-h-[90vh]">
+            {/* Decorative Sparkles */}
+            <div className="absolute top-32 left-[30%] text-emerald-600 text-2xl">✦</div>
+            <div className="absolute top-48 right-[35%] text-emerald-600 text-lg">✦</div>
+            <div className="absolute top-20 right-[20%] text-slate-300 text-3xl font-light">✧</div>
+            <div className="absolute bottom-[30%] right-[15%] text-slate-300 text-2xl font-light">✧</div>
+            <div className="absolute bottom-[40%] left-[5%] text-slate-300 text-xl font-light">✧</div>
 
             {/* Hero Content */}
-            <div className="relative z-10 w-full max-w-7xl mx-auto px-5 pt-24 pb-8 md:pt-32 md:pb-20">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            <div className="relative z-10 w-full max-w-7xl mx-auto px-5 pt-28 md:pt-36 pb-0">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-4 items-end">
 
-                    {/* Text Content */}
+                    {/* Text Content - Left Side */}
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                        className="space-y-6 text-center lg:text-left order-2 lg:order-1"
+                        transition={{ duration: 0.7 }}
+                        className="space-y-6 text-left pb-12 lg:pb-24"
                     >
-                        {/* Badge */}
-                        <div className="inline-flex items-center gap-2 bg-slate-100 border border-slate-200 px-4 py-2 rounded-full">
-                            <div className="w-2 h-2 rounded-full bg-green-500" />
-                            <span className="text-sm font-medium text-slate-700">Dwarka, since 1994</span>
-                        </div>
-
-                        {/* Headline */}
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-slate-900 leading-[0.95] tracking-tight">
-                            Freshness{' '}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-800">
-                                You Can Feel.
-                            </span>
+                        {/* Main Headline */}
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.1] tracking-tight">
+                            <span className="font-serif italic text-slate-800">Premium Care,</span>
+                            <br />
+                            <span className="font-bold text-slate-900">Guaranteed Fresh.</span>
                         </h1>
 
                         {/* Subhead */}
-                        <div className="text-base sm:text-lg text-slate-600 max-w-md mx-auto lg:mx-0 leading-relaxed space-y-1">
-                            <p className="font-medium text-slate-800">Not just cleaned.</p>
-                            <p className="font-medium text-slate-800">Properly cared for.</p>
-                            <p className="text-slate-500 mt-2">Trusted dry cleaners for 30+ years.</p>
-                        </div>
+                        <p className="text-base sm:text-lg text-slate-500 max-w-md leading-relaxed">
+                            Not just cleaned. Properly cared for. Trusted dry cleaners serving Dwarka families for 30+ years.
+                        </p>
 
-                        {/* Trust Badges */}
-                        <div className="flex flex-wrap justify-center lg:justify-start gap-4 text-sm">
-                            <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm border border-slate-100">
-                                <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
-                                <span className="font-semibold text-slate-700">German Eco-Solvents</span>
-                            </div>
-                            <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm border border-slate-100">
-                                <Clock className="w-4 h-4 text-slate-500" />
-                                <span className="font-semibold text-slate-700">24hr Turnaround</span>
-                            </div>
-                        </div>
-
-                        {/* CTA Buttons - Desktop Only */}
-                        <div className="hidden md:flex flex-col sm:flex-row gap-4 pt-4">
+                        {/* CTA Buttons */}
+                        <div className="flex flex-wrap items-center gap-4 pt-2">
                             <Link
                                 href="/booking"
-                                className="group relative overflow-hidden bg-gradient-to-r from-orange-500 to-orange-600 text-white text-lg font-bold rounded-2xl px-8 py-4 shadow-xl shadow-orange-500/25 hover:shadow-2xl hover:shadow-orange-500/30 transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2"
+                                className="bg-emerald-700 hover:bg-emerald-800 text-white font-semibold rounded-lg px-6 py-3.5 shadow-lg shadow-emerald-900/20 transition-all hover:-translate-y-0.5"
                             >
-                                Book Pickup
-                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                Book Appointment
                             </Link>
 
-                            <a
-                                href="tel:9250885310"
-                                className="bg-white text-slate-800 border-2 border-slate-200 hover:border-slate-300 text-lg font-bold rounded-2xl px-8 py-4 transition-all flex items-center justify-center gap-2 hover:bg-slate-50"
-                            >
-                                <Phone className="w-5 h-5" />
-                                Call Us
-                            </a>
+                            <button className="flex items-center gap-3 group">
+                                <div className="w-12 h-12 rounded-full bg-[#E8D5C4] flex items-center justify-center group-hover:bg-[#dcc7b3] transition-colors">
+                                    <Play className="w-4 h-4 text-slate-700 ml-0.5" fill="currentColor" />
+                                </div>
+                                <span className="font-medium text-slate-700">How We Work</span>
+                            </button>
+                        </div>
+
+                        {/* Stats Badge */}
+                        <div className="flex items-center gap-4 pt-4">
+                            <div className="bg-white rounded-xl px-5 py-3 shadow-lg border border-slate-100">
+                                <div className="flex items-center gap-4">
+                                    <div>
+                                        <p className="text-2xl font-bold text-slate-900">5,000+</p>
+                                        <p className="text-xs text-slate-500">Happy Customers</p>
+                                    </div>
+                                    {/* Avatar Stack */}
+                                    <div className="flex -space-x-2">
+                                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 border-2 border-white"></div>
+                                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 border-2 border-white"></div>
+                                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-pink-400 to-pink-600 border-2 border-white"></div>
+                                        <div className="w-8 h-8 rounded-full bg-gradient-to-br from-green-400 to-green-600 border-2 border-white"></div>
+                                    </div>
+                                    {/* Arrow */}
+                                    <svg className="w-6 h-6 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                                        <path d="M4 12c4-8 12-8 16 0" />
+                                        <path d="M20 12l-3-3m3 3l-3 3" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Preview Images */}
+                        <div className="flex gap-3 pt-4">
+                            <div className="relative w-24 h-20 rounded-xl overflow-hidden shadow-lg border-2 border-white">
+                                <Image
+                                    src="/step-cleaning.png"
+                                    alt="Professional cleaning"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
+                            <div className="relative w-24 h-20 rounded-xl overflow-hidden shadow-lg border-2 border-white">
+                                <Image
+                                    src="/step-delivery.png"
+                                    alt="Fast delivery"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
                         </div>
                     </motion.div>
 
-                    {/* Hero Image */}
+                    {/* Hero Image - Right Side */}
                     <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        animate={{ opacity: 1, scale: 1 }}
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.2 }}
-                        className="relative order-1 lg:order-2"
+                        className="relative flex justify-end items-end"
                     >
-                        <div className="relative aspect-[4/3] lg:aspect-square rounded-3xl overflow-hidden shadow-2xl shadow-slate-900/10">
-                            {/* Gradient Overlay */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent z-10" />
+                        {/* Decorative Background Shape */}
+                        <div className="absolute bottom-0 right-0 w-[90%] h-[85%] bg-[#E8D5C4] rounded-tl-[80px] -z-10"></div>
 
+                        {/* Person Image */}
+                        <div className="relative w-full max-w-lg">
                             <Image
-                                src="/hero-fresh.png"
-                                alt="Fresh laundry blowing in the wind"
-                                fill
-                                className="object-cover"
+                                src="/hero-person.png"
+                                alt="Professional dry cleaner with cleaning supplies"
+                                width={500}
+                                height={600}
+                                className="object-contain"
                                 priority
-                                sizes="(max-width: 768px) 100vw, 50vw"
                             />
-
-                            {/* Floating Badge */}
-                            <div className="absolute bottom-4 left-4 right-4 z-20 bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-lg">
-                                <div className="flex items-center justify-between">
-                                    <div>
-                                        <p className="text-xs text-slate-500 font-medium uppercase tracking-wider">Trusted by</p>
-                                        <p className="text-lg font-bold text-slate-900">5000+ Families</p>
-                                    </div>
-                                    <div className="flex -space-x-2">
-                                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 border-2 border-white flex items-center justify-center text-white text-xs font-bold">R</div>
-                                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-orange-400 to-orange-600 border-2 border-white flex items-center justify-center text-white text-xs font-bold">S</div>
-                                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-green-400 to-green-600 border-2 border-white flex items-center justify-center text-white text-xs font-bold">A</div>
-                                        <div className="w-10 h-10 rounded-full bg-slate-200 border-2 border-white flex items-center justify-center text-slate-600 text-xs font-bold">+</div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </motion.div>
                 </div>

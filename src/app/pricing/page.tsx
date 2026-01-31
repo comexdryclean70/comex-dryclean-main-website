@@ -45,7 +45,7 @@ export default function PricingPage() {
     const tabs = Object.keys(PRICING_DATA) as (keyof typeof PRICING_DATA)[];
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50/30 font-sans pb-40 md:pb-0">
+        <div className="min-h-screen bg-[#FDF8F3] font-sans pb-40 md:pb-0">
 
             {/* Premium Header */}
             <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-100">

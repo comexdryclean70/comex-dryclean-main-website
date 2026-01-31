@@ -49,7 +49,7 @@ function BookingFormWithParams() {
     const focusClasses = "border-orange-500 ring-4 ring-orange-500/10 shadow-lg shadow-orange-500/5";
 
     return (
-        <section id="booking" className="py-20 px-6 bg-slate-50 relative">
+        <section id="booking" className="py-20 px-6 bg-[#FDF8F3] relative">
             <div className="max-w-xl mx-auto relative z-10">
                 <div className="text-center mb-10">
                     <h2 className="text-3xl font-bold text-blue-950 font-serif mb-2">Schedule a Pickup</h2>

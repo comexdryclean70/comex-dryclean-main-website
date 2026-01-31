@@ -34,6 +34,10 @@ export default function Home() {
 
       {/* Sections - Light & Airy Backgrounds */}
       <div className="bg-slate-50">
+        <TrustStrip />
+      </div>
+
+      <div className="bg-slate-50">
         <div className="bg-slate-50">
           <ComparisonSection />
         </div>

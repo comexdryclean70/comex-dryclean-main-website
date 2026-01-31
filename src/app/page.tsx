@@ -1,45 +1,59 @@
 "use client";
 
-import { Suspense } from "react";
 import Hero from "@/components/Hero";
 import Logo from "@/components/Logo";
-import TrustStrip from "@/components/TrustStrip";
-import MastersTouch from "@/components/MastersTouch";
-import ProcessSteps from "@/components/ProcessSteps";
-import PriceCards from "@/components/PriceCards";
 import TrustGallery from "@/components/TrustGallery";
 import CallToAction from "@/components/CallToAction";
 import StorySection from "@/components/StorySection";
 import ComparisonSection from "@/components/ComparisonSection";
 import MainFooter from "@/components/MainFooter";
 import StickyFooter from "@/components/StickyFooter";
+import MastersTouch from "@/components/MastersTouch";
+import ProcessSteps from "@/components/ProcessSteps";
+import PriceCards from "@/components/PriceCards";
+import TrustStrip from "@/components/TrustStrip";
 
 export default function Home() {
   return (
-    <main className="min-h-screen pb-20 md:pb-0 font-sans text-slate-800 selection:bg-orange-100 selection:text-orange-900">
-      {/* Header */}
+    <main className="min-h-screen pb-20 md:pb-0 font-sans text-[#003366] bg-white selection:bg-red-100 selection:text-[#D32F2F]">
+      {/* Header - White & Clean */}
       <nav className="absolute top-0 left-0 w-full p-6 z-30 flex justify-between items-center max-w-7xl mx-auto left-0 right-0">
-        <div className="w-44 md:w-56 relative">
-          <Logo variant="dark" />
+        <div className="relative">
+          <Logo variant="brand" className="w-32 md:w-40" />
         </div>
-        <div className="hidden md:flex items-center gap-6">
-          <a href="/pricing" className="text-slate-600 font-bold hover:text-blue-600 transition-colors">Pricing</a>
-          <a href="tel:9250885310" className="text-sm font-bold bg-white/80 backdrop-blur-md px-4 py-2 rounded-full border border-white shadow-sm hover:text-orange-600 transition-colors">
-            📞 9250-885-310
+        <div className="hidden md:flex items-center gap-8">
+          <a href="/pricing" className="text-sm font-bold text-slate-500 hover:text-[#003366] uppercase tracking-wider transition-colors">Pricing</a>
+          <a href="/booking" className="text-sm font-bold text-slate-500 hover:text-[#003366] uppercase tracking-wider transition-colors">Services</a>
+          <a href="tel:9250885310" className="text-sm font-bold bg-[#003366] text-white px-6 py-2.5 rounded-full shadow-lg shadow-blue-900/20 hover:bg-[#002244] transition-all">
+            Call Us
           </a>
         </div>
       </nav>
 
+      {/* Brand Energy Hero */}
       <Hero />
-      <StorySection />
-      <ComparisonSection />
 
-      <TrustStrip />
+      {/* Sections - Light & Airy Backgrounds */}
+      <div className="bg-slate-50">
+        <TrustStrip />
+      </div>
+
+      <StorySection />
+
+      <div className="bg-slate-50">
+        <ComparisonSection />
+      </div>
+
       <MastersTouch />
-      <ProcessSteps />
+
+      <div className="bg-slate-50">
+        <ProcessSteps />
+      </div>
+
       <PriceCards />
 
       <TrustGallery />
+
       <CallToAction />
       <MainFooter />
       <StickyFooter />

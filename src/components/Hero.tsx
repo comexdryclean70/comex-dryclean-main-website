@@ -24,7 +24,7 @@ export default function Hero() {
                     className="col-span-1 lg:col-span-7 space-y-8 order-1 relative z-20 pt-8 lg:pt-0"
                 >
                     {/* Badge - Minimalist Capsule */}
-                    <div className="inline-flex items-center gap-2 bg-blue-50/50 border border-blue-100/50 px-4 py-1.5 rounded-full text-[#003366] text-xs font-bold tracking-widest uppercase">
+                    <div className="inline-flex items-center gap-2 bg-blue-50/50 border border-blue-100/50 px-4 py-1.5 rounded-full text-[#003366] text-xs font-bold tracking-widest uppercase mt-8 md:mt-12">
                         <Sparkles className="w-3 h-3 text-[#D32F2F]" />
                         <span>Premium Garment Care</span>
                     </div>

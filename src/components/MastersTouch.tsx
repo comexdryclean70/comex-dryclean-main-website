@@ -57,9 +57,9 @@ export default function MastersTouch() {
                         </div>
 
                         {/* Headline */}
-                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 mb-6 leading-tight tracking-tight">
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#003366] mb-6 leading-tight tracking-tight">
                             Because Some Things{' '}
-                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-500">
+                            <span className="text-red-600 font-serif italic">
                                 Shouldn't Be Automated
                             </span>
                         </h2>

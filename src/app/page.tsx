@@ -19,7 +19,7 @@ export default function Home() {
       {/* Header - White & Clean */}
       <nav className="absolute top-0 left-0 w-full p-6 md:p-8 z-30 flex justify-between items-center max-w-7xl mx-auto left-0 right-0">
         <div className="relative">
-          <Logo variant="brand" className="w-40 md:w-56" />
+          <Logo variant="brand" className="w-56 md:w-80" />
         </div>
         <div className="hidden md:flex items-center gap-8 bg-white/50 backdrop-blur-sm pl-6 pr-2 py-2 rounded-full border border-slate-100/50">
           <a href="/pricing" className="text-sm font-extrabold text-[#003366]/70 hover:text-[#003366] uppercase tracking-wider transition-colors">Pricing</a>

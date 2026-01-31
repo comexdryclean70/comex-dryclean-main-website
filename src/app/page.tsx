@@ -16,9 +16,9 @@ export default function Home() {
   return (
     <main className="min-h-screen pb-20 md:pb-0 font-sans text-[#003366] bg-[#FDF8F3] selection:bg-red-100 selection:text-[#D32F2F]">
       {/* Header - White & Clean */}
-      <nav className="absolute top-0 left-0 w-full p-6 md:p-8 z-30 flex justify-between items-center max-w-7xl mx-auto left-0 right-0">
+      <nav className="absolute top-0 left-0 w-full p-5 md:p-8 z-30 flex justify-between items-center max-w-7xl mx-auto left-0 right-0">
         <div className="relative md:-ml-6 md:-mt-4">
-          <Logo variant="brand" className="w-64 h-20 md:w-80 md:h-28" />
+          <Logo variant="brand" className="w-44 h-14 md:w-80 md:h-28" />
         </div>
         <div className="hidden md:flex items-center gap-8 bg-white/50 backdrop-blur-sm pl-6 pr-2 py-2 rounded-full border border-slate-100/50">
           <a href="/pricing" className="text-sm font-extrabold text-[#003366]/70 hover:text-[#003366] uppercase tracking-wider transition-colors">Pricing</a>

@@ -38,9 +38,7 @@ export default function Home() {
       </div>
 
       <div className="bg-slate-50">
-        <div className="bg-slate-50">
-          <ComparisonSection />
-        </div>
+        <ComparisonSection />
 
         <MastersTouch />
 

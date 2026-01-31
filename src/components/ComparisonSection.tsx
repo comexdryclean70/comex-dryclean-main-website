@@ -186,22 +186,6 @@ export default function ComparisonSection() {
                         </div>
                     ))}
                 </motion.div>
-
-                {/* Footer Closer */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="mt-12 text-center"
-                >
-                    <div className="inline-block bg-slate-900 text-white px-8 py-6 rounded-2xl shadow-xl shadow-slate-900/20">
-                        <p className="text-lg md:text-xl font-medium leading-relaxed">
-                            <span className="text-slate-400">If it's replaceable, any cleaner will do.</span>
-                            <br />
-                            <span className="text-white font-bold">If it isn't, that's where we come in.</span>
-                        </p>
-                    </div>
-                </motion.div>
             </div>
         </section>
     );

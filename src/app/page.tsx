@@ -4,7 +4,6 @@ import Hero from "@/components/Hero";
 import Logo from "@/components/Logo";
 import TrustGallery from "@/components/TrustGallery";
 import CallToAction from "@/components/CallToAction";
-import StorySection from "@/components/StorySection";
 import ComparisonSection from "@/components/ComparisonSection";
 import MainFooter from "@/components/MainFooter";
 import StickyFooter from "@/components/StickyFooter";

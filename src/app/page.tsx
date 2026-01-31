@@ -42,11 +42,11 @@ export default function Home() {
         <TrustStrip />
       </div>
 
+      <MastersTouch />
+
       <div className="bg-slate-50">
         <ComparisonSection />
       </div>
-
-      <MastersTouch />
 
       <PriceCards />
 

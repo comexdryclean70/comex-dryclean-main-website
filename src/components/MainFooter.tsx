@@ -67,6 +67,16 @@ export default function MainFooter() {
                             </div>
 
                             <div className="flex gap-4">
+                                <MapPin className="w-6 h-6 text-orange-500 shrink-0" />
+                                <div>
+                                    <p className="font-semibold text-white">Mahavir Enclave Outlet</p>
+                                    <p className="text-sm text-emerald-50/70 mt-1">
+                                        Shop A-1A, Yadav Estate, Old Som Bazar Rd, Mahavir Enclave Part 1, Delhi-45.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className="flex gap-4">
                                 <Phone className="w-6 h-6 text-orange-500 shrink-0" />
                                 <div>
                                     <p className="font-semibold text-white">Call Us</p>

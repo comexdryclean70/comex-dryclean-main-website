@@ -86,7 +86,7 @@ export default function PriceCards() {
                                 className="flex items-center justify-between p-4 rounded-xl border border-slate-100 bg-white hover:border-orange-100 hover:shadow-sm transition-all group"
                             >
                                 <div className="flex items-center gap-4">
-                                    <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-[#0B1121] group-hover:text-[#D4AF37] transition-colors">
+                                    <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-blue-600 group-hover:text-orange-500 transition-colors">
                                         <service.icon className="w-5 h-5" strokeWidth={1.5} />
                                     </div>
                                     <span className="font-bold text-slate-700">{service.name}</span>
@@ -95,7 +95,7 @@ export default function PriceCards() {
                                 <div className="flex items-center gap-2 md:gap-8 text-sm">
                                     <div className="w-20 text-right">
                                         <span className="block md:hidden text-[10px] text-slate-400 font-bold uppercase">DC</span>
-                                        <span className="font-bold text-[#0B1121]">{service.dc}</span>
+                                        <span className="font-bold text-blue-950">{service.dc}</span>
                                     </div>
                                     <div className="w-20 text-right">
                                         <span className="block md:hidden text-[10px] text-slate-400 font-bold uppercase">Press</span>
@@ -111,7 +111,7 @@ export default function PriceCards() {
                     <p className="text-xs text-slate-400 font-medium">
                         * Prices exclude GST. Saree polishing and rolling ("Charak") available separately.
                     </p>
-                    <Link href="/pricing" className="inline-flex items-center text-[#D4AF37] font-bold hover:underline tracking-wide">
+                    <Link href="/pricing" className="inline-flex items-center text-orange-600 font-bold hover:underline">
                         View Full Price List &rarr;
                     </Link>
                 </div>

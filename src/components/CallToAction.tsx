@@ -30,7 +30,7 @@ export default function CallToAction() {
                     <h2 className="text-4xl md:text-5xl font-bold text-white font-serif mb-6 leading-tight">
                         Ready to Restore Your Wardrobe?
                     </h2>
-                    <p className="text-slate-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed font-sans">
+                    <p className="text-emerald-50 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
                         Experience the difference of premium dry cleaning. Free pickup and delivery in Dwarka & Palam.
                     </p>
 
@@ -39,7 +39,7 @@ export default function CallToAction() {
                             <motion.button
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                className="w-full sm:w-auto bg-[#D4AF37] text-[#0B1121] px-8 py-4 rounded-sm font-bold text-lg shadow-lg shadow-amber-900/20 flex items-center justify-center gap-3 transition-colors hover:bg-[#b89628] uppercase tracking-wide text-sm"
+                                className="w-full sm:w-auto bg-[#D32F2F] text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg shadow-red-900/30 flex items-center justify-center gap-3 transition-colors hover:bg-red-700"
                             >
                                 Schedule Pickup Now <ArrowRight className="w-5 h-5" />
                             </motion.button>
@@ -47,9 +47,9 @@ export default function CallToAction() {
 
                         <a href="tel:9250885310" className="w-full sm:w-auto">
                             <motion.button
-                                whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.05)" }}
+                                whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
                                 whileTap={{ scale: 0.95 }}
-                                className="w-full sm:w-auto bg-transparent border border-white/20 text-white px-8 py-3.5 rounded-sm font-bold text-lg flex items-center justify-center gap-3 hover:border-[#D4AF37] hover:text-[#D4AF37] transition-colors uppercase tracking-wide text-sm"
+                                className="w-full sm:w-auto bg-transparent border-2 border-slate-500 text-white px-8 py-3.5 rounded-xl font-bold text-lg flex items-center justify-center gap-3 hover:border-white transition-colors"
                             >
                                 <Phone className="w-5 h-5" /> Call 9250-885-310
                             </motion.button>

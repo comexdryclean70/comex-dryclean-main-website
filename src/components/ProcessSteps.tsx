@@ -75,11 +75,11 @@ export default function ProcessSteps() {
 
                                 {/* Text */}
                                 <div>
-                                    <div className="inline-block bg-[#0B1121] text-[#D4AF37] text-xs font-bold px-3 py-1 rounded-sm mb-3 tracking-widest">
+                                    <div className="inline-block bg-blue-50 text-blue-800 text-xs font-bold px-2 py-1 rounded-md mb-2">
                                         STEP {step.id}
                                     </div>
-                                    <h3 className="text-xl font-bold font-serif text-[#0B1121] mb-1">{step.title}</h3>
-                                    <p className="text-slate-500 text-sm font-sans">{step.desc}</p>
+                                    <h3 className="text-xl font-bold text-blue-950 mb-1">{step.title}</h3>
+                                    <p className="text-slate-500 text-sm">{step.desc}</p>
                                 </div>
                             </div>
                         </div>

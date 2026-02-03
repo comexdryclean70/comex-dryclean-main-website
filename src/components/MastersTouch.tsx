@@ -57,48 +57,48 @@ export default function MastersTouch() {
                         className="w-full lg:w-1/2 order-2"
                     >
                         {/* Badge */}
-                        <div className="inline-flex items-center gap-2 bg-[#D4AF37]/10 border border-[#D4AF37]/20 px-4 py-1.5 rounded-full mb-8">
-                            <div className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse" />
-                            <span className="text-xs font-bold text-[#D4AF37] uppercase tracking-widest">The Human Element</span>
+                        <div className="inline-flex items-center gap-2 bg-orange-50 border border-orange-100 px-4 py-1.5 rounded-full mb-8">
+                            <div className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
+                            <span className="text-xs font-bold text-orange-600 uppercase tracking-widest">The Human Element</span>
                         </div>
 
                         {/* Headline */}
-                        <h2 className="text-4xl lg:text-5xl font-bold font-serif text-[#0B1121] mb-8 leading-[1.1] tracking-tight">
+                        <h2 className="text-4xl lg:text-5xl font-bold font-serif text-[#003366] mb-8 leading-[1.1] tracking-tight">
                             Machines are fast. <br />
-                            <span className="relative inline-block text-[#D4AF37] font-serif italic pr-2">
+                            <span className="relative inline-block text-red-600 font-serif italic pr-2">
                                 <span className="relative z-10">Humans are careful.</span>
-                                <svg className="absolute -bottom-2 left-0 w-full h-3 text-[#D4AF37]/40 -z-10 transform -rotate-1" viewBox="0 0 200 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.00025 6.99997C25.7501 2.99999 124.814 3.00003 166.085 4.30561C190.158 5.06716 195.034 5.25732 198.001 5.49997" stroke="currentColor" strokeWidth="3" strokeLinecap="round" /></svg>
+                                <svg className="absolute -bottom-2 left-0 w-full h-3 text-red-300 -z-10 transform -rotate-1" viewBox="0 0 200 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.00025 6.99997C25.7501 2.99999 124.814 3.00003 166.085 4.30561C190.158 5.06716 195.034 5.25732 198.001 5.49997" stroke="currentColor" strokeWidth="3" strokeLinecap="round" /></svg>
                             </span>
                         </h2>
 
-                        <p className="text-lg text-slate-600 mb-10 leading-relaxed max-w-lg font-sans">
+                        <p className="text-lg text-slate-600 mb-10 leading-relaxed max-w-lg">
                             We don't just "process" clothes. We open them up, check the seams, test the fabric, and
-                            <span className="font-semibold text-[#0B1121]"> actually look at what we're cleaning.</span>
+                            <span className="font-semibold text-[#003366]"> actually look at what we're cleaning.</span>
                         </p>
 
                         {/* Visual Cards - Replaces the Text Block */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
                             {/* Card 1: Silk */}
-                            <div className="bg-white p-5 rounded-sm border border-slate-100 shadow-sm hover:shadow-md transition-shadow group">
-                                <div className="w-10 h-10 bg-slate-50 rounded-full flex items-center justify-center text-[#0B1121] mb-3 group-hover:scale-110 transition-transform">
+                            <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow group">
+                                <div className="w-10 h-10 bg-purple-50 rounded-full flex items-center justify-center text-purple-600 mb-3 group-hover:scale-110 transition-transform">
                                     <Sparkles className="w-5 h-5" />
                                 </div>
-                                <h4 className="font-bold text-[#0B1121] mb-1 font-serif">Silk isn't Wool</h4>
+                                <h4 className="font-bold text-[#003366] mb-1">Silk isn't Wool</h4>
                                 <p className="text-sm text-slate-500">Different fibers need different solvents. One size fits nothing.</p>
                             </div>
 
                             {/* Card 2: Zari */}
-                            <div className="bg-white p-5 rounded-sm border border-slate-100 shadow-sm hover:shadow-md transition-shadow group">
-                                <div className="w-10 h-10 bg-slate-50 rounded-full flex items-center justify-center text-[#0B1121] mb-3 group-hover:scale-110 transition-transform">
+                            <div className="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md transition-shadow group">
+                                <div className="w-10 h-10 bg-amber-50 rounded-full flex items-center justify-center text-amber-600 mb-3 group-hover:scale-110 transition-transform">
                                     <Layers className="w-5 h-5" />
                                 </div>
-                                <h4 className="font-bold text-[#0B1121] mb-1 font-serif">Zari isn't Cotton</h4>
+                                <h4 className="font-bold text-[#003366] mb-1">Zari isn't Cotton</h4>
                                 <p className="text-sm text-slate-500">Intricate work requires hand-finishing, not machine pressing.</p>
                             </div>
                         </div>
 
                         {/* Bottom Quote / Signoff */}
-                        <div className="pl-6 border-l-4 border-[#D4AF37]">
+                        <div className="pl-6 border-l-4 border-[#003366]">
                             <p className="text-slate-600 italic font-serif text-lg">
                                 "Treating them the same ensures they lose their shape. Treating them differently ensures they last."
                             </p>

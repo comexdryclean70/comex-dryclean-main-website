@@ -27,14 +27,13 @@ export default function TrustGallery() {
                     {/* Left Side - Image */}
                     <div className="relative h-[500px] lg:h-[600px] w-full flex items-end justify-center lg:justify-start">
                         {/* Blob Background */}
-                        <div className="absolute bottom-0 left-0 lg:left-10 w-[90%] h-[70%] bg-[#0B1121] rounded-t-[100px] -z-10"></div>
+                        <div className="absolute bottom-0 left-0 lg:left-10 w-[90%] h-[70%] bg-[#006A4E]/10 rounded-t-[100px] -z-10"></div>
 
                         <Image
-                            src="/luxury-rack.png"
-                            alt="Premium dry cleaning boutique interior"
-                            width={500}
-                            height={700}
-                            className="object-cover h-[85%] w-auto drop-shadow-2xl rounded-t-[80px]"
+                            src="/comex-shop-front.png"
+                            alt="Comex Dry Cleaners Shop Front"
+                            fill
+                            className="object-cover drop-shadow-2xl rounded-tr-[100px]"
                             priority
                         />
 
@@ -114,14 +113,14 @@ export default function TrustGallery() {
                 </div>
             </div>
 
-            {/* Stats Strip - Navy/Gold */}
-            <div className="bg-[#0B1121] py-12 md:py-16 mt-[-40px] lg:mt-0 relative z-0">
+            {/* Stats Strip - Green/Emerald to match reference */}
+            <div className="bg-[#006A4E] py-12 md:py-16 mt-[-40px] lg:mt-0 relative z-0">
                 <div className="max-w-7xl mx-auto px-6">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-white/10">
                         {STATS.map((stat, idx) => (
                             <div key={idx} className="pt-8 md:pt-0 px-4">
-                                <div className="text-4xl md:text-5xl font-serif text-white mb-2">{stat.value}</div>
-                                <div className="text-[#D4AF37] font-bold tracking-widest uppercase text-xs">{stat.label}</div>
+                                <div className="text-4xl md:text-5xl font-bold text-white mb-2">{stat.value}</div>
+                                <div className="text-emerald-100 font-medium tracking-wide uppercase text-sm">{stat.label}</div>
                             </div>
                         ))}
                     </div>

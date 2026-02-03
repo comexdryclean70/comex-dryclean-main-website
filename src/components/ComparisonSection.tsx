@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, X, Star } from "lucide-react";
+import { Check, X } from "lucide-react";
 import { motion } from "framer-motion";
 
 const COMPARISON_POINTS = [
@@ -8,24 +8,24 @@ const COMPARISON_POINTS = [
         feature: "The Solvent",
         them: {
             text: "Industrial detergents",
-            sub: "Aggressive chemicals designed for volume, not fabric life."
+            sub: "Aggressive chemicals meant for volume."
         },
         us: {
             text: "Petrol Wash & PERC",
-            sub: "Cleans deeper, preserves colour, and keeps the fabric alive.",
-            footnote: "Quiet flex: Petrol wash isn't faster. It's just better."
+            sub: "Cleans deeper, preserves colour.",
+            footnote: "Quiet flex: It's just better."
         }
     },
     {
         feature: "The Process",
         them: {
             text: "Batch washing",
-            sub: "Your clothes go in with dozens of others."
+            sub: "Mixed with dozens of others."
         },
         us: {
             text: "Individual processing",
-            sub: "Every garment is tagged, checked, and treated on its own.",
-            footnote: "No mix-ups. No shortcuts. No 'good enough'."
+            sub: "Tagged & treated on its own.",
+            footnote: "No mix-ups. No shortcuts."
         }
     },
     {
@@ -36,142 +36,118 @@ const COMPARISON_POINTS = [
         },
         us: {
             text: "Vacuum steam press",
-            sub: "Restores shape, fall, and the way the garment was meant to sit.",
-            footnote: "Especially noticeable on suits, sarees, dresses, and structured wear."
+            sub: "Restores shape & fall.",
+            footnote: "Noticeable on suits & sarees."
         }
     }
 ];
 
 export default function ComparisonSection() {
     return (
-        <section className="py-20 px-4 bg-[#FDF8F3] relative overflow-hidden">
-            <div className="max-w-6xl mx-auto">
-                {/* Header */}
+        <section className="py-10 px-4 bg-[#FDF8F3] relative overflow-hidden">
+            <div className="max-w-5xl mx-auto">
+                {/* Compact Header */}
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="text-center mb-16"
+                    className="text-center mb-10"
                 >
-                    <h2 className="text-4xl md:text-5xl font-bold text-[#003366] mb-4 tracking-tight font-serif">
+                    <h2 className="text-3xl md:text-4xl font-bold text-[#003366] mb-2 tracking-tight font-serif">
                         Why We Still Do It the Old Way
                     </h2>
-                    <p className="text-lg md:text-xl text-slate-500 italic mb-8 font-serif">
-                        (And why your best clothes thank us for it)
-                    </p>
-                    <p className="text-slate-600 max-w-3xl mx-auto leading-relaxed text-sm md:text-base">
-                        Most modern cleaners optimise for speed and scale. We optimise for fabric, finish, and longevity.
-                        <span className="font-bold text-[#003366]"> That difference shows up over time.</span>
+                    <p className="text-sm md:text-base text-slate-500 italic font-serif">
+                        (Because modern shortcuts ruin good clothes)
                     </p>
                 </motion.div>
 
-                {/* Mobile: Elegant Cards */}
-                <div className="md:hidden space-y-6">
+                {/* Mobile: Dense Cards */}
+                <div className="md:hidden space-y-4">
                     {COMPARISON_POINTS.map((point, idx) => (
                         <motion.div
                             key={idx}
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 10 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: idx * 0.1 }}
-                            className="bg-white rounded-3xl p-6 shadow-xl shadow-slate-900/5 border border-slate-100 overflow-hidden relative"
+                            className="bg-white rounded-2xl p-5 shadow-sm border border-slate-100 overflow-hidden relative"
                         >
                             <div className="absolute top-0 left-0 w-1 h-full bg-[#006A4E]"></div>
 
-                            {/* Feature Name */}
-                            <div className="flex items-center gap-4 mb-6">
-                                <span className="text-slate-300 font-bold text-lg">0{idx + 1}</span>
-                                <h3 className="font-bold text-[#003366] text-xl font-serif">{point.feature}</h3>
+                            <div className="flex justify-between items-center mb-4 border-b border-slate-50 pb-2">
+                                <h3 className="font-bold text-[#003366] text-lg font-serif">{point.feature}</h3>
+                                <div className="text-xs font-bold text-slate-300">0{idx + 1}</div>
                             </div>
 
-                            {/* Comparison */}
-                            <div className="space-y-6">
-                                {/* Them */}
-                                <div className="pl-4 border-l-2 border-red-100 relative">
-                                    <div className="absolute -left-[9px] top-0 bg-white">
-                                        <X className="w-4 h-4 text-red-400" />
-                                    </div>
-                                    <p className="text-xs font-bold text-red-400 uppercase tracking-wider mb-1">Generic Apps</p>
-                                    <p className="font-semibold text-slate-700">{point.them.text}</p>
-                                    <p className="text-sm text-slate-500 mt-1">{point.them.sub}</p>
+                            <div className="grid grid-cols-2 gap-4">
+                                <div className="pr-2 border-r border-slate-50">
+                                    <p className="text-[10px] font-bold text-red-400 uppercase tracking-wider mb-1">Others</p>
+                                    <p className="font-medium text-slate-700 text-sm">{point.them.text}</p>
+                                    <p className="text-[10px] text-slate-400 mt-1 leading-tight">{point.them.sub}</p>
                                 </div>
 
-                                {/* Us */}
-                                <div className="pl-4 border-l-2 border-emerald-500 relative bg-emerald-50/30 -mx-6 py-4 px-6">
-                                    <div className="absolute left-[15px] top-4 bg-[#006A4E] rounded-full p-0.5">
-                                        <Check className="w-3 h-3 text-white" />
-                                    </div>
-                                    <p className="text-xs font-bold text-[#006A4E] uppercase tracking-wider mb-1">Comex Drycleaners</p>
-                                    <p className="font-bold text-[#003366] text-lg">{point.us.text}</p>
-                                    <p className="text-sm text-slate-600 mt-1">{point.us.sub}</p>
-
-                                    <div className="mt-3 inline-block bg-white border border-emerald-100 rounded-full px-3 py-1 text-[11px] font-medium text-emerald-700 italic">
-                                        {point.us.footnote}
-                                    </div>
+                                <div>
+                                    <p className="text-[10px] font-bold text-[#006A4E] uppercase tracking-wider mb-1">Comex</p>
+                                    <p className="font-bold text-[#003366] text-sm">{point.us.text}</p>
+                                    <p className="text-[10px] text-slate-600 mt-1 leading-tight">{point.us.sub}</p>
                                 </div>
                             </div>
                         </motion.div>
                     ))}
                 </div>
 
-                {/* Desktop: Full Width Table Card */}
+                {/* Desktop: Streamlined Table */}
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="hidden md:block bg-white rounded-t-3xl rounded-b-3xl shadow-2xl shadow-slate-900/5 overflow-hidden border border-slate-100"
+                    className="hidden md:block bg-white rounded-2xl shadow-lg ring-1 ring-slate-900/5 overflow-hidden"
                 >
-                    {/* Table Header */}
-                    <div className="grid grid-cols-[0.8fr_1fr_1.2fr] bg-[#001F2B] p-5 py-6">
-                        <div className="text-slate-400 font-bold text-xs uppercase tracking-widest pl-8 flex items-center">Feature</div>
-                        <div className="text-center text-red-400 font-bold text-xs uppercase tracking-widest">Generic Apps</div>
-                        <div className="text-center text-white font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2">
-                            <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
-                            Comex Drycleaners
-                        </div>
+                    {/* Header Row */}
+                    <div className="grid grid-cols-[1fr_1fr_1.2fr] bg-[#001F2B] px-6 py-4 border-b border-slate-100">
+                        <div className="text-slate-400 font-bold text-xs uppercase tracking-widest">Feature</div>
+                        <div className="text-red-400 font-bold text-xs uppercase tracking-widest pl-4">Generic Apps</div>
+                        <div className="text-emerald-400 font-bold text-xs uppercase tracking-widest pl-4">Comex Drycleaners</div>
                     </div>
 
-                    {/* Rows */}
-                    {COMPARISON_POINTS.map((point, idx) => (
-                        <div
-                            key={idx}
-                            className={`grid grid-cols-[0.8fr_1fr_1.2fr] p-8 border-b border-slate-50 items-center hover:bg-slate-50/50 transition-colors ${idx === COMPARISON_POINTS.length - 1 ? 'border-b-0' : ''}`}
-                        >
-                            {/* Feature */}
-                            <div className="pl-8 flex items-center gap-4">
-                                <span className="text-slate-200 font-bold text-xl font-serif">0{idx + 1}</span>
-                                <span className="font-bold text-[#003366] text-xl font-serif">
-                                    {point.feature}
-                                </span>
-                            </div>
-
-                            {/* Them */}
-                            <div className="text-center px-8 opacity-60 hover:opacity-100 transition-opacity">
-                                <div className="inline-flex flex-col items-center">
-                                    <div className="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-red-400 mb-3">
-                                        <X className="w-4 h-4" strokeWidth={3} />
-                                    </div>
-                                    <div className="font-semibold text-slate-700 mb-1">{point.them.text}</div>
-                                    <div className="text-sm text-slate-400 leading-relaxed max-w-[200px]">{point.them.sub}</div>
+                    {/* Data Rows */}
+                    <div className="divide-y divide-slate-50">
+                        {COMPARISON_POINTS.map((point, idx) => (
+                            <div key={idx} className="grid grid-cols-[1fr_1fr_1.2fr] px-6 py-6 group hover:bg-slate-50/50 transition-colors">
+                                {/* Feature */}
+                                <div className="flex flex-col justify-center">
+                                    <span className="font-bold text-[#003366] text-lg font-serif">{point.feature}</span>
                                 </div>
-                            </div>
 
-                            {/* Us */}
-                            <div className="text-center px-8 relative">
-                                <div className="inline-flex flex-col items-center">
-                                    <div className="w-10 h-10 rounded-full bg-[#006A4E] flex items-center justify-center text-white shadow-lg shadow-emerald-900/20 mb-3 scale-110">
-                                        <Check className="w-5 h-5" strokeWidth={3} />
+                                {/* Them */}
+                                <div className="flex flex-col justify-center pl-4 pr-8 opacity-60 group-hover:opacity-100 transition-opacity">
+                                    <div className="flex items-start gap-2">
+                                        <X className="w-4 h-4 text-red-400 mt-0.5 shrink-0" />
+                                        <div>
+                                            <div className="font-semibold text-slate-700 text-sm">{point.them.text}</div>
+                                            <div className="text-xs text-slate-400 mt-0.5">{point.them.sub}</div>
+                                        </div>
                                     </div>
-                                    <div className="font-bold text-[#003366] text-lg mb-1">{point.us.text}</div>
-                                    <div className="text-sm text-slate-600 leading-relaxed max-w-[280px] mb-3">{point.us.sub}</div>
+                                </div>
 
-                                    <div className="bg-emerald-50 text-emerald-700 text-xs font-medium italic px-4 py-1.5 rounded-full border border-emerald-100">
-                                        {point.us.footnote}
+                                {/* Us */}
+                                <div className="flex flex-col justify-center pl-4 relative">
+                                    <div className="flex items-start gap-3">
+                                        <div className="mt-0.5 bg-[#006A4E] rounded-full p-0.5 shrink-0">
+                                            <Check className="w-3 h-3 text-white" strokeWidth={3} />
+                                        </div>
+                                        <div>
+                                            <div className="font-bold text-[#003366] text-sm">{point.us.text}</div>
+                                            <div className="text-xs text-slate-600 mt-0.5 mb-2">{point.us.sub}</div>
+                                            <span className="inline-block bg-emerald-50 text-emerald-700 text-[10px] font-bold px-2 py-0.5 rounded border border-emerald-100">
+                                                {point.us.footnote}
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </motion.div>
             </div>
         </section>

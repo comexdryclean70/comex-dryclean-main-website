@@ -12,16 +12,30 @@ export default function TrustStrip() {
         <section className="py-8 bg-[#FDF8F3] border-b border-slate-100 shadow-sm relative z-20">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    {badges.map((badge, idx) => (
-                        <div key={idx} className="flex flex-col md:flex-row items-center justify-center gap-3 text-center md:text-left p-2 rounded-xl hover:bg-slate-50 transition-colors">
-                            <div className={`p-3 rounded-full ${badge.bg} ${badge.color}`}>
-                                <badge.icon className="w-6 h-6" strokeWidth={2} />
-                            </div>
-                            <span className="text-sm md:text-base font-bold text-slate-700 leading-tight">
-                                {badge.text}
-                            </span>
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-3 text-center md:text-left p-2 hover:bg-slate-50 transition-colors">
+                        <div className="p-3 rounded-full bg-[#0B1121] text-[#D4AF37]">
+                            <Leaf className="w-5 h-5" strokeWidth={2} />
                         </div>
-                    ))}
+                        <span className="text-sm md:text-base font-bold text-slate-700 leading-tight">Petrol Wash Only</span>
+                    </div>
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-3 text-center md:text-left p-2 hover:bg-slate-50 transition-colors">
+                        <div className="p-3 rounded-full bg-[#0B1121] text-[#D4AF37]">
+                            <Clock className="w-5 h-5" strokeWidth={2} />
+                        </div>
+                        <span className="text-sm md:text-base font-bold text-slate-700 leading-tight">Vacuum Steam Press</span>
+                    </div>
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-3 text-center md:text-left p-2 hover:bg-slate-50 transition-colors">
+                        <div className="p-3 rounded-full bg-[#0B1121] text-[#D4AF37]">
+                            <ShieldCheck className="w-5 h-5" strokeWidth={2} />
+                        </div>
+                        <span className="text-sm md:text-base font-bold text-slate-700 leading-tight">Stain Removal Experts</span>
+                    </div>
+                    <div className="flex flex-col md:flex-row items-center justify-center gap-3 text-center md:text-left p-2 hover:bg-slate-50 transition-colors">
+                        <div className="p-3 rounded-full bg-[#0B1121] text-[#D4AF37]">
+                            <MapPin className="w-5 h-5" strokeWidth={2} />
+                        </div>
+                        <span className="text-sm md:text-base font-bold text-slate-700 leading-tight">Individual Packaging</span>
+                    </div>
                 </div>
             </div>
         </section>

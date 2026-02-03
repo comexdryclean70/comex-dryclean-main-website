@@ -4,27 +4,23 @@ import Image from "next/image";
 
 export default function MainFooter() {
     return (
-        <footer className="bg-[#005c44] border-t border-white/10 relative">
-            {/* Visual Divider Line */}
-            <hr className="border-white/5 w-full absolute top-0" />
-
-            <div className="absolute inset-0 bg-black/20 pointer-events-none"></div>
+        <footer className="bg-[#0B1121] border-t border-white/5 relative">
             <div className="relative z-10 pt-16 pb-24 md:pb-8 px-6 text-white">
-                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12 border-b border-white/10 pb-12">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12 border-b border-white/5 pb-12">
 
                     {/* Column 1: About */}
                     <div>
                         <div className="mb-8">
                             <Logo variant="dark" />
                         </div>
-                        <p className="text-emerald-50/80 leading-relaxed mb-6 max-w-sm">
-                            Providing premium dry cleaning and laundry services in Dwarka and Palam since 2010. We use eco-friendly chemicals and state-of-the-art machinery to give your clothes the care they deserve.
+                        <p className="text-slate-400 leading-relaxed mb-6 max-w-sm font-sans">
+                            Providing premium dry cleaning and laundry services in Dwarka and Palam since 2010. We use eco-friendly chemicals and state-of-the-art machinery.
                         </p>
                         <div className="flex gap-4">
-                            <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-orange-500 transition-colors">
+                            <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#D4AF37] hover:text-[#0B1121] transition-all">
                                 <Instagram className="w-5 h-5" />
                             </a>
-                            <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-orange-500 transition-colors">
+                            <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#D4AF37] hover:text-[#0B1121] transition-all">
                                 <Facebook className="w-5 h-5" />
                             </a>
                         </div>
@@ -32,77 +28,61 @@ export default function MainFooter() {
 
                     {/* Column 2: Services */}
                     <div>
-                        <h3 className="text-lg font-bold mb-6 text-orange-400 uppercase tracking-widest text-xs">Our Services</h3>
-                        <ul className="space-y-4 text-sm text-emerald-50/70">
-                            <li className="flex items-center gap-2">
-                                <span className="w-1.5 h-1.5 rounded-full bg-orange-500"></span> Dry Cleaning (Men & Women)
+                        <h3 className="text-lg font-bold mb-6 text-[#D4AF37] font-serif tracking-wide border-b border-[#D4AF37]/20 pb-2 inline-block">Our Services</h3>
+                        <ul className="space-y-4 text-sm text-slate-400">
+                            <li className="flex items-center gap-3">
+                                <span className="w-1 h-1 rounded-full bg-[#D4AF37]"></span> Dry Cleaning
                             </li>
-                            <li className="flex items-center gap-2">
-                                <span className="w-1.5 h-1.5 rounded-full bg-orange-500"></span> Steam Pressing
+                            <li className="flex items-center gap-3">
+                                <span className="w-1 h-1 rounded-full bg-[#D4AF37]"></span> Steam Pressing
                             </li>
-                            <li className="flex items-center gap-2">
-                                <span className="w-1.5 h-1.5 rounded-full bg-orange-500"></span> Carpet & Sofa Cleaning
+                            <li className="flex items-center gap-3">
+                                <span className="w-1 h-1 rounded-full bg-[#D4AF37]"></span> Carpet & Sofa Care
                             </li>
-                            <li className="flex items-center gap-2">
-                                <span className="w-1.5 h-1.5 rounded-full bg-orange-500"></span> Blanket & Curtain Care
-                            </li>
-                            <li className="flex items-center gap-2">
-                                <span className="w-1.5 h-1.5 rounded-full bg-orange-500"></span> Shoe Laundry
+                            <li className="flex items-center gap-3">
+                                <span className="w-1 h-1 rounded-full bg-[#D4AF37]"></span> Shoe Laundry
                             </li>
                         </ul>
                     </div>
 
                     {/* Column 3: Contact */}
                     <div>
-                        <h3 className="text-lg font-bold mb-6 text-orange-400 uppercase tracking-widest text-xs">Reach Us</h3>
+                        <h3 className="text-lg font-bold mb-6 text-[#D4AF37] font-serif tracking-wide border-b border-[#D4AF37]/20 pb-2 inline-block">Concierge</h3>
                         <div className="space-y-6">
                             <div className="flex gap-4">
-                                <MapPin className="w-6 h-6 text-orange-500 shrink-0" />
+                                <MapPin className="w-6 h-6 text-[#D4AF37] shrink-0" />
                                 <div>
-                                    <p className="font-semibold text-white">Main Outlet</p>
-                                    <p className="text-sm text-emerald-50/70 mt-1">
+                                    <p className="font-semibold text-white font-serif tracking-wide">Main Outlet</p>
+                                    <p className="text-sm text-slate-400 mt-1 font-sans">
                                         Shop No. G-5, Ground Floor, Vardhman Plaza, Sec-6, Dwarka.
                                     </p>
                                 </div>
                             </div>
 
                             <div className="flex gap-4">
-                                <MapPin className="w-6 h-6 text-orange-500 shrink-0" />
+                                <MapPin className="w-6 h-6 text-[#D4AF37] shrink-0" />
                                 <div>
-                                    <p className="font-semibold text-white">Mahavir Enclave Outlet</p>
-                                    <p className="text-sm text-emerald-50/70 mt-1">
-                                        Shop A-1A, Yadav Estate, Old Som Bazar Rd, Mahavir Enclave Part 1, Delhi-45.
+                                    <p className="font-semibold text-white font-serif tracking-wide">Mahavir Enclave</p>
+                                    <p className="text-sm text-slate-400 mt-1 font-sans">
+                                        Shop A-1A, Yadav Estate, Old Som Bazar Rd, Mahavir Enclave Part 1.
                                     </p>
                                 </div>
                             </div>
 
                             <div className="flex gap-4">
-                                <Phone className="w-6 h-6 text-orange-500 shrink-0" />
+                                <Phone className="w-6 h-6 text-[#D4AF37] shrink-0" />
                                 <div>
-                                    <p className="font-semibold text-white">Call Us</p>
-                                    <a href="tel:9250885310" className="block text-sm text-emerald-50/70 hover:text-white mt-1">9250-885-310</a>
-                                    <a href="tel:9818590800" className="block text-sm text-emerald-50/70 hover:text-white">9818-590-800</a>
-                                </div>
-                            </div>
-
-                            <div className="flex gap-4">
-                                <Clock className="w-6 h-6 text-orange-500 shrink-0" />
-                                <div>
-                                    <p className="font-semibold text-white">Working Hours</p>
-                                    <p className="text-sm text-emerald-50/70 mt-1">Mon - Sun: 10:00 AM - 9:00 PM</p>
-                                    <p className="text-xs text-green-400 mt-1">Open 7 Days a Week</p>
+                                    <p className="font-semibold text-white font-serif tracking-wide">Direct Line</p>
+                                    <a href="tel:9250885310" className="block text-sm text-slate-400 hover:text-white mt-1 font-sans">9250-885-310</a>
+                                    <a href="tel:9818590800" className="block text-sm text-slate-400 hover:text-white font-sans">9818-590-800</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs text-emerald-50/50">
-                    <p>&copy; {new Date().getFullYear()} Comex Drycleaners. All rights reserved.</p>
-                    <div className="flex gap-6 mt-4 md:mt-0">
-                        <a href="#" className="hover:text-white">Privacy Policy</a>
-                        <a href="#" className="hover:text-white">Terms of Service</a>
-                    </div>
+                <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-xs text-slate-600">
+                    <p>&copy; {new Date().getFullYear()} Comex Drycleaners. Luxury Heritage Care.</p>
                 </div>
             </div>
         </footer>

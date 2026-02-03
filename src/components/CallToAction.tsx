@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function CallToAction() {
     return (
-        <section className="relative py-12 px-6 bg-[#006A4E] overflow-hidden">
+        <section className="relative py-12 px-6 bg-slate-900 overflow-hidden">
             {/* Background Illustration - Subtle Line Art */}
             <div className="absolute inset-0 opacity-10 pointer-events-none">
                 <svg className="absolute right-[-10%] top-[-10%] w-[600px] h-[600px] stroke-white fill-none" viewBox="0 0 200 200" strokeWidth="0.5">
@@ -39,7 +39,7 @@ export default function CallToAction() {
                             <motion.button
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                className="w-full sm:w-auto bg-orange-500 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg shadow-orange-900/30 flex items-center justify-center gap-3 transition-colors hover:bg-orange-600"
+                                className="w-full sm:w-auto bg-[#D32F2F] text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg shadow-red-900/30 flex items-center justify-center gap-3 transition-colors hover:bg-red-700"
                             >
                                 Schedule Pickup Now <ArrowRight className="w-5 h-5" />
                             </motion.button>

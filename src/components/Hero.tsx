@@ -27,8 +27,8 @@ export default function Hero() {
                         className="space-y-6 text-left pb-12 lg:pb-24"
                     >
                         {/* Main Headline */}
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.1] tracking-tight">
-                            <span className="font-serif italic text-slate-800">Premium Care,</span>
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] leading-[1.1] tracking-tight font-serif">
+                            <span className="italic text-slate-800">Premium Care,</span>
                             <br />
                             <span className="relative inline-block">
                                 <span className="font-bold text-red-600 relative z-10">Guaranteed Fresh.</span>
@@ -45,7 +45,7 @@ export default function Hero() {
                         <div className="flex flex-wrap items-center gap-4 pt-2">
                             <Link
                                 href="/booking"
-                                className="bg-emerald-700 hover:bg-emerald-800 text-white font-semibold rounded-lg px-6 py-3.5 shadow-lg shadow-emerald-900/20 transition-all hover:-translate-y-0.5"
+                                className="bg-[#D32F2F] hover:bg-red-800 text-white font-semibold rounded-lg px-6 py-3.5 shadow-lg shadow-red-900/20 transition-all hover:-translate-y-0.5"
                             >
                                 Book Appointment
                             </Link>
@@ -116,11 +116,11 @@ export default function Hero() {
                         {/* Person Image */}
                         <div className="relative w-full max-w-lg">
                             <Image
-                                src="/hero-person.png"
-                                alt="Professional dry cleaner with cleaning supplies"
+                                src="/hero-master-pressman.png"
+                                alt="Master Pressman ironing a shirt"
                                 width={500}
                                 height={600}
-                                className="object-contain"
+                                className="object-cover rounded-2xl shadow-2xl"
                                 priority
                             />
                         </div>

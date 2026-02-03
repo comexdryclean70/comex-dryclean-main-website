@@ -63,7 +63,7 @@ export default function MastersTouch() {
                         </div>
 
                         {/* Headline */}
-                        <h2 className="text-4xl lg:text-5xl font-bold text-[#003366] mb-8 leading-[1.1] tracking-tight">
+                        <h2 className="text-4xl lg:text-5xl font-bold font-serif text-[#003366] mb-8 leading-[1.1] tracking-tight">
                             Machines are fast. <br />
                             <span className="relative inline-block text-red-600 font-serif italic pr-2">
                                 <span className="relative z-10">Humans are careful.</span>

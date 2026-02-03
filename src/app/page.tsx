@@ -4,6 +4,7 @@ import { useState } from "react";
 import Hero from "@/components/Hero";
 import Logo from "@/components/Logo";
 import TrustGallery from "@/components/TrustGallery";
+import RequestCallback from "@/components/RequestCallback";
 import CallToAction from "@/components/CallToAction";
 import ComparisonSection from "@/components/ComparisonSection";
 import MainFooter from "@/components/MainFooter";
@@ -122,6 +123,8 @@ export default function Home() {
       <PriceCards />
 
       <TrustGallery />
+
+      <RequestCallback />
 
       <CallToAction />
       <MainFooter />

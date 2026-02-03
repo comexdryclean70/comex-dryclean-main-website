@@ -17,7 +17,13 @@ export default function RequestCallback() {
     };
 
     return (
-        <section className="py-20 px-4 bg-white relative overflow-hidden">
+        <section className="py-20 px-4 bg-[#FDF8F3] relative overflow-hidden">
+            {/* Background Texture & Orbs */}
+            <div className="absolute inset-0 opacity-[0.03]"
+                style={{ backgroundImage: "radial-gradient(#003366 1px, transparent 1px)", backgroundSize: "24px 24px" }}>
+            </div>
+            <div className="absolute top-[-10%] left-[-5%] w-96 h-96 bg-orange-300/20 rounded-full blur-3xl pointer-events-none"></div>
+            <div className="absolute bottom-[-10%] right-[-5%] w-96 h-96 bg-[#003366]/5 rounded-full blur-3xl pointer-events-none"></div>
             <div className="max-w-4xl mx-auto relative z-10">
                 <div className="bg-[#003366] rounded-3xl p-8 md:p-12 shadow-2xl overflow-hidden relative">
 

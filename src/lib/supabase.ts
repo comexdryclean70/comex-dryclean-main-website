@@ -8,4 +8,8 @@ if (!supabaseUrl || !supabaseKey) {
     console.warn("Supabase credentials are missing.");
 }
 
-export const supabase = createClient(supabaseUrl, supabaseKey);
+// Fallback to placeholder to prevent build failure if env vars are missing
+export const supabase = createClient(
+    supabaseUrl || "https://placeholder.supabase.co",
+    supabaseKey || "placeholder-key"
+);

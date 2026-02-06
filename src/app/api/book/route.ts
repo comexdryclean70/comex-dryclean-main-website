@@ -4,7 +4,7 @@ import { supabase } from "@/lib/supabase";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY || "re_123");
-const OWNER_EMAIL = process.env.OWNER_EMAIL || "robingautam@gmail.com"; // Fallback if env var missing
+const OWNER_EMAIL = process.env.OWNER_EMAIL || "care@comexdrycleaner.com"; // Fallback if env var missing
 
 export async function POST(request: Request) {
     try {

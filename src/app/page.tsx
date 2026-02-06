@@ -82,7 +82,7 @@ export default function Home() {
                   { label: "Our Services", href: "/services" },
                   { label: "Pricing", href: "/pricing" },
                   { label: "Book Pickup", href: "/booking" },
-                  { label: "Contact Us", href: "/contact" }
+                  { label: "Contact Us", href: "mailto:care@comexdrycleaner.com" }
                 ].map((link, i) => (
                   <a
                     key={link.label}

@@ -85,6 +85,14 @@ export default function MainFooter() {
                             </div>
 
                             <div className="flex gap-4">
+                                <Mail className="w-6 h-6 text-orange-500 shrink-0" />
+                                <div>
+                                    <p className="font-semibold text-white">Email Us</p>
+                                    <a href="mailto:care@comexdrycleaner.com" className="block text-sm text-emerald-50/70 hover:text-white mt-1">care@comexdrycleaner.com</a>
+                                </div>
+                            </div>
+
+                            <div className="flex gap-4">
                                 <Clock className="w-6 h-6 text-orange-500 shrink-0" />
                                 <div>
                                     <p className="font-semibold text-white">Working Hours</p>

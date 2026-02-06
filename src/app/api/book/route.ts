@@ -46,7 +46,7 @@ export async function POST(request: Request) {
                 : "Location not shared";
 
             await resend.emails.send({
-                from: "Comex Orders <onboarding@resend.dev>", // Default Resend test domain
+                from: "Comex Orders <orders@comexdrycleaner.com>", // Verified domain
                 to: OWNER_EMAIL,
                 subject: `New Order: ${name} (${date})`,
                 html: `

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display, Lobster, Caveat } from "next/font/google"; // [NEW] Import Playfair
 import "./globals.css";
+import { WhatsAppToggle } from "@/components/WhatsAppToggle";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -81,6 +82,7 @@ export default function RootLayout({
         />
         <div className="relative z-10">
           {children}
+          <WhatsAppToggle />
         </div>
       </body>
     </html>

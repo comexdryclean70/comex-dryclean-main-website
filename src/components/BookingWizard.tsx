@@ -22,6 +22,7 @@ type FormData = {
     phone: string;
     address: string;
     items: string;
+    location: { lat: number | null, lng: number | null };
 };
 
 // --- Helpers ---
@@ -88,7 +89,9 @@ export default function BookingWizard() {
         phone: "",
         address: "",
         items: "",
+        location: { lat: null, lng: null }
     });
+    const [isLocating, setIsLocating] = useState(false);
 
     // --- Cart State ---
     const [cart, setCart] = useState<CartItem[]>([]);
@@ -176,11 +179,32 @@ export default function BookingWizard() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        alert("Booking Confirmed! We will contact you shortly.");
-        setIsSubmitting(false);
-        // Reset or redirect
+
+        try {
+            const res = await fetch("/api/book", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData),
+            });
+
+            if (!res.ok) throw new Error("Booking failed");
+
+            // Success Logic
+            const whatsappMsg = `*New Pickup Request*\n\nName: ${formData.name}\nPhone: ${formData.phone}\nAddress: ${formData.address}\n\nDate: ${formData.date}\nTime: ${formData.time}\n\nItems:\n${formData.items}`;
+
+            // Redirect to WhatsApp
+            window.open(`https://wa.me/919250625681?text=${encodeURIComponent(whatsappMsg)}`, '_blank');
+
+            alert("Booking Confirmed! Redirecting to WhatsApp...");
+            // Optional: Reset form or redirect to success page
+            setStep(1);
+            setCart([]);
+        } catch (error) {
+            console.error(error);
+            alert("Something went wrong. Please try again.");
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -323,13 +347,51 @@ export default function BookingWizard() {
                                                 onChange={(e: any) => setFormData({ ...formData, phone: e.target.value })}
                                                 required
                                             />
-                                            <FloatingLabelInput
-                                                label="Complete Address (House No, Street, Landmark)"
-                                                icon={MapPin}
-                                                value={formData.address}
-                                                onChange={(e: any) => setFormData({ ...formData, address: e.target.value })}
-                                                required
-                                            />
+                                            <div className="relative">
+                                                <FloatingLabelInput
+                                                    label="Complete Address (House No, Street, Landmark)"
+                                                    icon={MapPin}
+                                                    value={formData.address}
+                                                    onChange={(e: any) => setFormData({ ...formData, address: e.target.value })}
+                                                    required
+                                                />
+                                                <button
+                                                    type="button"
+                                                    onClick={() => {
+                                                        if (!navigator.geolocation) {
+                                                            alert("Geolocation is not supported by your browser");
+                                                            return;
+                                                        }
+                                                        setIsLocating(true);
+                                                        navigator.geolocation.getCurrentPosition(
+                                                            async (position) => {
+                                                                const { latitude, longitude } = position.coords;
+                                                                // Optional: Reverse geocoding could go here if we had an API key for Google Maps
+                                                                // For now, we trust the manual address + exact coordinates
+                                                                setFormData(prev => ({
+                                                                    ...prev,
+                                                                    location: { lat: latitude, lng: longitude },
+                                                                    address: prev.address || "Current Location Detected (Please add house no)"
+                                                                }));
+                                                                setIsLocating(false);
+                                                            },
+                                                            (error) => {
+                                                                console.error(error);
+                                                                alert("Unable to retrieve your location");
+                                                                setIsLocating(false);
+                                                            }
+                                                        );
+                                                    }}
+                                                    className="absolute right-2 top-2 p-2 text-xs bg-blue-50 text-blue-600 font-bold rounded-lg hover:bg-blue-100 transition-colors flex items-center gap-1 z-20"
+                                                >
+                                                    {isLocating ? (
+                                                        <span className="animate-spin">⌛</span>
+                                                    ) : (
+                                                        <MapPin className="w-3 h-3" />
+                                                    )}
+                                                    {formData.location.lat ? "Updated" : "Detect"}
+                                                </button>
+                                            </div>
                                         </div>
                                     </motion.div>
                                 )}

@@ -191,7 +191,10 @@ export default function BookingWizard() {
                 body: JSON.stringify(formData),
             });
 
-            if (!res.ok) throw new Error("Booking failed");
+            if (!res.ok) {
+                const errorData = await res.json();
+                throw new Error(errorData.details || errorData.error || "Booking failed");
+            }
 
             // Success Logic
             const fullAddress = `${formData.houseNo}, ${formData.address}, ${formData.landmark ? 'Landmark: ' + formData.landmark : ''}`;
@@ -204,9 +207,9 @@ export default function BookingWizard() {
             // Optional: Reset form or redirect to success page
             setStep(1);
             setCart([]);
-        } catch (error) {
+        } catch (error: any) {
             console.error(error);
-            alert("Something went wrong. Please try again.");
+            alert(`Booking Error: ${error?.message || "Unknown error occurred"}`);
         } finally {
             setIsSubmitting(false);
         }

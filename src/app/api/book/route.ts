@@ -34,7 +34,7 @@ export async function POST(request: Request) {
         if (dbError) {
             console.error("Supabase Error:", dbError);
             return NextResponse.json(
-                { error: "Failed to save booking" },
+                { error: "Failed to save booking", details: dbError.message, code: dbError.code },
                 { status: 500 }
             );
         }
@@ -68,10 +68,10 @@ export async function POST(request: Request) {
         }
 
         return NextResponse.json({ success: true, filteredData: data });
-    } catch (error) {
+    } catch (error: any) {
         console.error("API Error:", error);
         return NextResponse.json(
-            { error: "Internal Server Error" },
+            { error: "Internal Server Error", details: error?.message || String(error) },
             { status: 500 }
         );
     }

@@ -38,7 +38,7 @@ const jsonLd = {
   "@type": "LocalBusiness",
   "name": "Comex Drycleaners",
   "image": "",
-  "telephone": "+91 0000000000",
+  "telephone": "+91 9250625681",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Moti Nagar",
@@ -53,12 +53,12 @@ const jsonLd = {
       "dayOfWeek": [
         "Monday",
         "Tuesday",
-        "Wednesday",
         "Thursday",
         "Friday",
-        "Saturday"
+        "Saturday",
+        "Sunday"
       ],
-      "opens": "09:00",
+      "opens": "10:00",
       "closes": "21:00"
     }
   ]
@@ -71,12 +71,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} ${playfair.variable} ${lobster.variable} font-sans bg-slate-50 text-slate-900 antialiased`}>
+      <body className={`${inter.variable} ${playfair.variable} ${lobster.variable} font-sans bg-[#FDF8F3] text-slate-900 antialiased relative`}>
+        {/* Global Dot Pattern Overlay */}
+        <div className="fixed inset-0 z-0 opacity-[0.4] pointer-events-none" style={{ backgroundImage: "radial-gradient(#cbd5e1 1px, transparent 1px)", backgroundSize: "32px 32px" }}></div>
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {children}
+        <div className="relative z-10">
+          {children}
+        </div>
       </body>
     </html>
   );

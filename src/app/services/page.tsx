@@ -63,11 +63,11 @@ const SERVICES = [
 
 export default function ServicesPage() {
     return (
-        <main className="min-h-screen bg-[#fffdfa] selection:bg-red-100 selection:text-[#D32F2F] pb-20 md:pb-0">
+        <main className="min-h-screen selection:bg-red-100 selection:text-[#D32F2F] pb-20 md:pb-0">
             {/* Header */}
             <nav className="absolute top-0 left-0 w-full p-6 md:p-8 z-30 flex justify-between items-center max-w-7xl mx-auto left-0 right-0">
                 <Link href="/" className="relative hover:scale-105 transition-transform">
-                    <Logo variant="brand" className="w-40 md:w-48" />
+                    <Logo variant="brand" className="w-56 md:w-96" />
                 </Link>
 
                 <div className="hidden md:flex items-center gap-8 bg-white/80 backdrop-blur-sm pl-6 pr-2 py-2 rounded-full border border-slate-100 shadow-sm">

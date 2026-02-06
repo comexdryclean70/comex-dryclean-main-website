@@ -6,11 +6,8 @@ import { ScanEye, Sparkles, Layers } from "lucide-react";
 
 export default function MastersTouch() {
     return (
-        <section className="py-20 md:py-24 bg-[#FDF8F3] relative overflow-hidden">
-            {/* Background Texture - Thread Pattern */}
-            <div className="absolute inset-0 opacity-[0.03]"
-                style={{ backgroundImage: "radial-gradient(#003366 1px, transparent 1px)", backgroundSize: "24px 24px" }}>
-            </div>
+        <section className="py-20 md:py-24 relative overflow-hidden">
+
 
             <div className="max-w-7xl mx-auto px-5 relative z-10">
                 <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">

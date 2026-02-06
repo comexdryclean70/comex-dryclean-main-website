@@ -5,6 +5,7 @@ import { PRICING_DATA } from '@/lib/pricingData';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { Minus, Plus, ShoppingBag, ArrowRight, Info, Sparkles, ChevronLeft } from 'lucide-react';
+import Logo from '@/components/Logo';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function PricingPage() {
@@ -45,7 +46,7 @@ export default function PricingPage() {
     const tabs = Object.keys(PRICING_DATA) as (keyof typeof PRICING_DATA)[];
 
     return (
-        <div className="min-h-screen bg-[#FDF8F3] font-sans pb-40 md:pb-0">
+        <div className="min-h-screen font-sans pb-40 md:pb-0">
 
             {/* Premium Header */}
             <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-100">
@@ -57,9 +58,7 @@ export default function PricingPage() {
                         <div className="w-10 h-10 bg-slate-100 rounded-xl flex items-center justify-center group-hover:bg-blue-50 transition-colors">
                             <ChevronLeft className="w-5 h-5 text-slate-600 group-hover:text-blue-600" />
                         </div>
-                        <div className="w-12 h-12 relative">
-                            <Image src="/comex-logo.png" fill alt="Comex" className="object-contain" />
-                        </div>
+                        <Logo variant="brand" className="w-40 md:w-48" />
                     </button>
 
                     {cartCount > 0 && (

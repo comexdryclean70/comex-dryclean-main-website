@@ -80,8 +80,7 @@ export default function MainFooter() {
                                 <Phone className="w-6 h-6 text-orange-500 shrink-0" />
                                 <div>
                                     <p className="font-semibold text-white">Call Us</p>
-                                    <a href="tel:9250885310" className="block text-sm text-emerald-50/70 hover:text-white mt-1">9250-885-310</a>
-                                    <a href="tel:9818590800" className="block text-sm text-emerald-50/70 hover:text-white">9818-590-800</a>
+                                    <a href="tel:9250625681" className="block text-sm text-emerald-50/70 hover:text-white mt-1">9250-625-681</a>
                                 </div>
                             </div>
 
@@ -89,8 +88,8 @@ export default function MainFooter() {
                                 <Clock className="w-6 h-6 text-orange-500 shrink-0" />
                                 <div>
                                     <p className="font-semibold text-white">Working Hours</p>
-                                    <p className="text-sm text-emerald-50/70 mt-1">Mon - Sun: 10:00 AM - 9:00 PM</p>
-                                    <p className="text-xs text-green-400 mt-1">Open 7 Days a Week</p>
+                                    <p className="text-sm text-emerald-50/70 mt-1">Mon, Tue, Thu - Sun: 10:00 AM - 9:00 PM</p>
+                                    <p className="text-xs text-red-400 mt-1">Wednesday Closed</p>
                                 </div>
                             </div>
                         </div>

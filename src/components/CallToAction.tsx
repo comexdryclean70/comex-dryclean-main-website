@@ -45,13 +45,13 @@ export default function CallToAction() {
                             </motion.button>
                         </Link>
 
-                        <a href="tel:9250885310" className="w-full sm:w-auto">
+                        <a href="tel:9250625681" className="w-full sm:w-auto">
                             <motion.button
                                 whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.1)" }}
                                 whileTap={{ scale: 0.95 }}
                                 className="w-full sm:w-auto bg-transparent border-2 border-slate-500 text-white px-8 py-3.5 rounded-xl font-bold text-lg flex items-center justify-center gap-3 hover:border-white transition-colors"
                             >
-                                <Phone className="w-5 h-5" /> Call 9250-885-310
+                                <Phone className="w-5 h-5" /> Call 9250-625-681
                             </motion.button>
                         </a>
                     </div>

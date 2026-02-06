@@ -44,7 +44,7 @@ const COMPARISON_POINTS = [
 
 export default function ComparisonSection() {
     return (
-        <section className="py-10 px-4 bg-[#FDF8F3] relative overflow-hidden">
+        <section className="py-10 px-4 relative overflow-hidden">
             <div className="max-w-5xl mx-auto">
                 {/* Compact Header */}
                 <motion.div

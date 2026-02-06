@@ -30,7 +30,7 @@ export default function TrustGallery() {
                         <div className="absolute bottom-0 left-0 lg:left-10 w-[90%] h-[70%] bg-[#006A4E]/10 rounded-t-[100px] -z-10"></div>
 
                         <Image
-                            src="/comex-shop-front-premium.png"
+                            src="/comex-shop-front-new.jpg"
                             alt="Comex Dry Cleaners Shop Front"
                             fill
                             className="object-cover drop-shadow-2xl rounded-tr-[100px]"

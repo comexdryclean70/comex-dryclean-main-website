@@ -20,7 +20,9 @@ type FormData = {
     time: string;
     name: string;
     phone: string;
+    houseNo: string;
     address: string;
+    landmark: string;
     items: string;
     location: { lat: number | null, lng: number | null };
 };
@@ -87,7 +89,9 @@ export default function BookingWizard() {
         time: "",
         name: "",
         phone: "",
+        houseNo: "",
         address: "",
+        landmark: "",
         items: "",
         location: { lat: null, lng: null }
     });
@@ -158,7 +162,7 @@ export default function BookingWizard() {
     };
 
     const isStep1Valid = formData.date && formData.time;
-    const isStep2Valid = formData.name && formData.phone.length >= 10 && formData.address;
+    const isStep2Valid = formData.name && formData.phone.length >= 10 && formData.houseNo && formData.address;
     const isStep3Valid = cart.length > 0;
 
     const variants = {
@@ -190,7 +194,8 @@ export default function BookingWizard() {
             if (!res.ok) throw new Error("Booking failed");
 
             // Success Logic
-            const whatsappMsg = `*New Pickup Request*\n\nName: ${formData.name}\nPhone: ${formData.phone}\nAddress: ${formData.address}\n\nDate: ${formData.date}\nTime: ${formData.time}\n\nItems:\n${formData.items}`;
+            const fullAddress = `${formData.houseNo}, ${formData.address}, ${formData.landmark ? 'Landmark: ' + formData.landmark : ''}`;
+            const whatsappMsg = `*New Pickup Request*\n\nName: ${formData.name}\nPhone: ${formData.phone}\nAddress: ${fullAddress}\n\nDate: ${formData.date}\nTime: ${formData.time}\n\nItems:\n${formData.items}${formData.location.lat ? `\n\n📍 Location: https://maps.google.com/?q=${formData.location.lat},${formData.location.lng}` : ''}`;
 
             // Redirect to WhatsApp
             window.open(`https://wa.me/919250625681?text=${encodeURIComponent(whatsappMsg)}`, '_blank');
@@ -347,14 +352,40 @@ export default function BookingWizard() {
                                                 onChange={(e: any) => setFormData({ ...formData, phone: e.target.value })}
                                                 required
                                             />
-                                            <div className="relative">
+                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                                 <FloatingLabelInput
-                                                    label="Complete Address (House No, Street, Landmark)"
+                                                    label="House / Flat No. *"
                                                     icon={MapPin}
-                                                    value={formData.address}
-                                                    onChange={(e: any) => setFormData({ ...formData, address: e.target.value })}
+                                                    value={formData.houseNo}
+                                                    onChange={(e: any) => setFormData({ ...formData, houseNo: e.target.value })}
                                                     required
                                                 />
+                                                <FloatingLabelInput
+                                                    label="Landmark (Optional)"
+                                                    icon={MapPin}
+                                                    value={formData.landmark}
+                                                    onChange={(e: any) => setFormData({ ...formData, landmark: e.target.value })}
+                                                />
+                                            </div>
+
+                                            <FloatingLabelInput
+                                                label="Street Address / Colony / Area *"
+                                                icon={MapPin}
+                                                value={formData.address}
+                                                onChange={(e: any) => setFormData({ ...formData, address: e.target.value })}
+                                                required
+                                            />
+
+                                            {/* Location Detection Block */}
+                                            <div className="bg-blue-50/50 rounded-xl p-4 border border-blue-100 flex items-center justify-between">
+                                                <div>
+                                                    <p className="text-sm font-bold text-blue-900">Exact Location</p>
+                                                    <p className="text-xs text-blue-700/70 mt-0.5">
+                                                        {formData.location.lat
+                                                            ? "✅ GPS Location Successfully Pinned"
+                                                            : "Pin your location to help us find you faster."}
+                                                    </p>
+                                                </div>
                                                 <button
                                                     type="button"
                                                     onClick={() => {
@@ -366,12 +397,10 @@ export default function BookingWizard() {
                                                         navigator.geolocation.getCurrentPosition(
                                                             async (position) => {
                                                                 const { latitude, longitude } = position.coords;
-                                                                // Optional: Reverse geocoding could go here if we had an API key for Google Maps
-                                                                // For now, we trust the manual address + exact coordinates
                                                                 setFormData(prev => ({
                                                                     ...prev,
-                                                                    location: { lat: latitude, lng: longitude },
-                                                                    address: prev.address || "Current Location Detected (Please add house no)"
+                                                                    location: { lat: latitude, lng: longitude }
+                                                                    // removed address overwriting
                                                                 }));
                                                                 setIsLocating(false);
                                                             },
@@ -382,14 +411,17 @@ export default function BookingWizard() {
                                                             }
                                                         );
                                                     }}
-                                                    className="absolute right-2 top-2 p-2 text-xs bg-blue-50 text-blue-600 font-bold rounded-lg hover:bg-blue-100 transition-colors flex items-center gap-1 z-20"
+                                                    className={`px-4 py-2 rounded-lg text-xs font-bold transition-all flex items-center gap-2 ${formData.location.lat
+                                                        ? "bg-green-100 text-green-700 border border-green-200"
+                                                        : "bg-blue-600 text-white hover:bg-blue-700 shadow-md"
+                                                        }`}
                                                 >
                                                     {isLocating ? (
                                                         <span className="animate-spin">⌛</span>
                                                     ) : (
                                                         <MapPin className="w-3 h-3" />
                                                     )}
-                                                    {formData.location.lat ? "Updated" : "Detect"}
+                                                    {formData.location.lat ? "Pinned" : "Detect Location"}
                                                 </button>
                                             </div>
                                         </div>

@@ -9,7 +9,10 @@ const OWNER_EMAIL = process.env.OWNER_EMAIL || "care@comexdrycleaner.com"; // Fa
 export async function POST(request: Request) {
     try {
         const body = await request.json();
-        const { name, phone, address, date, time, items, location } = body;
+        const { name, phone, houseNo, address, landmark, date, time, items, location } = body;
+
+        // Combine address parts for storage
+        const fullAddress = `${houseNo}, ${address}${landmark ? ', ' + landmark : ''}`;
 
         // 1. Insert into Supabase
         const { data, error: dbError } = await supabase
@@ -18,7 +21,7 @@ export async function POST(request: Request) {
                 {
                     name,
                     phone,
-                    address,
+                    address: fullAddress,
                     date,
                     time,
                     items,
@@ -50,7 +53,7 @@ export async function POST(request: Request) {
           <h1>New Dry Cleaning Order</h1>
           <p><strong>Customer:</strong> ${name}</p>
           <p><strong>Phone:</strong> <a href="tel:${phone}">${phone}</a></p>
-          <p><strong>Address:</strong> ${address}</p>
+          <p><strong>Address:</strong> ${fullAddress}</p>
           <p><strong>Location:</strong> <a href="${mapsLink}">View on Maps</a></p>
           <hr />
           <p><strong>Date:</strong> ${date}</p>
